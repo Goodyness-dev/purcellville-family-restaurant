@@ -118,7 +118,7 @@ export default function Navbar({ onOpenOrder, onOpenMenu, darkMode, onToggleDark
 
           {/* Table / Order CTA */}
           <button 
-            onClick={onOpenOrder}
+            onClick={() => onOpenOrder(null)}
             className="btn-primary text-xs !py-2.5 !px-5"
           >
             <span>Pull Up a Chair</span>

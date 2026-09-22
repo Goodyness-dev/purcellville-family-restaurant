@@ -5,13 +5,19 @@ const TABLE_PLATES = [
   {
     id: 'spaghetti',
     name: 'Homestyle Spaghetti & Garlic Toast',
+    title: 'Homestyle Spaghetti & Garlic Toast',
+    price: '$14.95',
+    numericPrice: 14.95,
     badge: 'Turquoise Plate Signature',
     image: '/images/dish-table-spaghetti.jpg',
     description: 'Slow-simmered savory beef marinara swirled over spaghetti with thick buttered garlic bread on our signature turquoise ceramic plate.'
   },
   {
-    id: 'ribs',
+    id: 'bbq-chicken-fries-slaw',
     name: 'Sauced Ribs, Golden Fries & Slaw',
+    title: 'Sauced Ribs, Golden Fries & Slaw',
+    price: '$14.95',
+    numericPrice: 14.95,
     badge: 'Homestyle Dinner Platter',
     image: '/images/dish-ribs-fries.jpg',
     description: 'Fall-off-the-bone tender ribs with rich barbecue sauce, crispy skin-on fries, and cool creamy coleslaw.'
@@ -19,13 +25,19 @@ const TABLE_PLATES = [
   {
     id: 'sandwich',
     name: 'Toasted Sourdough Club & Soup',
+    title: 'Toasted Sourdough Club & Soup',
+    price: '$11.95',
+    numericPrice: 11.95,
     badge: 'Lunchtime Classic',
     image: '/images/dish-soup-sandwich.jpg',
     description: 'Golden grilled sourdough ham melt with crunchy crinkle chips and a velvety bowl of hot broccoli cheddar soup.'
   },
   {
-    id: 'burrito',
+    id: 'breakfast-burrito',
     name: 'Country Breakfast Burrito & Fruit',
+    title: 'Country Breakfast Burrito & Fruit',
+    price: '$10.95',
+    numericPrice: 10.95,
     badge: 'Morning Platter',
     image: '/images/dish-breakfast-burrito.jpg',
     description: 'Warm flour tortilla packed with eggs, sausage, and peppers, flanked by fresh melon, ripe berries, and dual house salsas.'
@@ -122,7 +134,7 @@ export default function TheTableSection({ onOpenOrder }) {
 
           <div className="flex items-center gap-4 shrink-0">
             <button 
-              onClick={onOpenOrder}
+              onClick={() => onOpenOrder(activePlate)}
               className="btn-primary text-sm !py-3.5 !px-7 shadow-thick"
             >
               <span>Order This Plate</span>

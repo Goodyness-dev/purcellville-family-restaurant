@@ -19,12 +19,21 @@ export default function TableOrderModal({ isOpen, onClose, preselectedItem }) {
 
   // If opened with a preselected item from a card
   useEffect(() => {
-    if (preselectedItem) {
+    if (preselectedItem && preselectedItem.id && typeof preselectedItem !== 'function') {
+      const validItem = {
+        ...preselectedItem,
+        title: preselectedItem.title || preselectedItem.name || 'Selected Dish',
+        price: preselectedItem.price || (preselectedItem.numericPrice ? `$${Number(preselectedItem.numericPrice).toFixed(2)}` : '$12.95'),
+        numericPrice: preselectedItem.numericPrice != null 
+          ? Number(preselectedItem.numericPrice) 
+          : (preselectedItem.price ? parseFloat(String(preselectedItem.price).replace(/[^0-9.]/g, '')) || 0 : 0)
+      };
+
       setSelectedItems(prev => ({
         ...prev,
-        [preselectedItem.id]: {
-          item: preselectedItem,
-          count: (prev[preselectedItem.id]?.count || 0) + 1
+        [validItem.id]: {
+          item: validItem,
+          count: (prev[validItem.id]?.count || 0) + 1
         }
       }));
     }
@@ -33,16 +42,27 @@ export default function TableOrderModal({ isOpen, onClose, preselectedItem }) {
   if (!isOpen) return null;
 
   const addItem = (item) => {
+    if (!item || !item.id) return;
+    const validItem = {
+      ...item,
+      title: item.title || item.name || 'Selected Dish',
+      price: item.price || (item.numericPrice ? `$${Number(item.numericPrice).toFixed(2)}` : '$12.95'),
+      numericPrice: item.numericPrice != null 
+        ? Number(item.numericPrice) 
+        : (item.price ? parseFloat(String(item.price).replace(/[^0-9.]/g, '')) || 0 : 0)
+    };
+
     setSelectedItems(prev => {
-      const current = prev[item.id]?.count || 0;
+      const current = prev[validItem.id]?.count || 0;
       return {
         ...prev,
-        [item.id]: { item, count: current + 1 }
+        [validItem.id]: { item: validItem, count: current + 1 }
       };
     });
   };
 
   const removeItem = (itemId) => {
+    if (!itemId) return;
     setSelectedItems(prev => {
       const current = prev[itemId]?.count || 0;
       if (current <= 1) {
@@ -57,10 +77,13 @@ export default function TableOrderModal({ isOpen, onClose, preselectedItem }) {
     });
   };
 
-  const totalCount = Object.values(selectedItems).reduce((sum, entry) => sum + entry.count, 0);
+  const totalCount = Object.values(selectedItems).reduce((sum, entry) => sum + (entry?.count || 0), 0);
   const subtotal = Object.values(selectedItems).reduce((sum, entry) => {
-    const priceNum = entry.item.numericPrice || parseFloat(entry.item.price.replace('$', '')) || 0;
-    return sum + (priceNum * entry.count);
+    if (!entry || !entry.item) return sum;
+    const priceNum = entry.item.numericPrice != null
+      ? Number(entry.item.numericPrice)
+      : (entry.item.price ? parseFloat(String(entry.item.price).replace(/[^0-9.]/g, '')) || 0 : 0);
+    return sum + (priceNum * (entry.count || 1));
   }, 0);
 
   const filteredServices = activeCategory === 'All Plates'
@@ -237,17 +260,24 @@ export default function TableOrderModal({ isOpen, onClose, preselectedItem }) {
                         : 'No dishes selected yet. You can pre-order favorites or just reserve a table below.'}
                     </div>
                   ) : (
-                    Object.values(selectedItems).map(({ item, count }) => (
-                      <div key={item.id} className="py-2 flex items-center justify-between text-xs font-mono">
-                        <div className="flex items-center gap-1.5 truncate pr-2">
-                          <span className="font-bold text-restaurant-red">{count}x</span>
-                          <span className="truncate text-restaurant-brown dark:text-cream-100">{item.title}</span>
+                    Object.values(selectedItems).map(({ item, count }) => {
+                      if (!item) return null;
+                      const title = item.title || item.name || 'Dish';
+                      const numPrice = item.numericPrice != null
+                        ? Number(item.numericPrice)
+                        : (item.price ? parseFloat(String(item.price).replace(/[^0-9.]/g, '')) || 0 : 0);
+                      return (
+                        <div key={item.id || title} className="py-2 flex items-center justify-between text-xs font-mono">
+                          <div className="flex items-center gap-1.5 truncate pr-2">
+                            <span className="font-bold text-restaurant-red">{count}x</span>
+                            <span className="truncate text-restaurant-brown dark:text-cream-100">{title}</span>
+                          </div>
+                          <span className="font-bold text-restaurant-brown dark:text-cream-100 shrink-0">
+                            ${(numPrice * count).toFixed(2)}
+                          </span>
                         </div>
-                        <span className="font-bold text-restaurant-brown dark:text-cream-100 shrink-0">
-                          ${((item.numericPrice || 0) * count).toFixed(2)}
-                        </span>
-                      </div>
-                    ))
+                      );
+                    })
                   )}
                 </div>
 
@@ -386,12 +416,19 @@ export default function TableOrderModal({ isOpen, onClose, preselectedItem }) {
                 <span>Summary:</span>
                 <span>{formData.name} • {formData.phone}</span>
               </div>
-              {Object.values(selectedItems).map(({ item, count }) => (
-                <div key={item.id} className="flex justify-between text-restaurant-brown/80 dark:text-cream-200">
-                  <span>{count}x {item.title}</span>
-                  <span>${((item.numericPrice || 0) * count).toFixed(2)}</span>
-                </div>
-              ))}
+              {Object.values(selectedItems).map(({ item, count }) => {
+                if (!item) return null;
+                const title = item.title || item.name || 'Dish';
+                const numPrice = item.numericPrice != null
+                  ? Number(item.numericPrice)
+                  : (item.price ? parseFloat(String(item.price).replace(/[^0-9.]/g, '')) || 0 : 0);
+                return (
+                  <div key={item.id || title} className="flex justify-between text-restaurant-brown/80 dark:text-cream-200">
+                    <span>{count}x {title}</span>
+                    <span>${(numPrice * count).toFixed(2)}</span>
+                  </div>
+                );
+              })}
               {totalCount > 0 && (
                 <div className="flex justify-between font-extrabold text-restaurant-red pt-2 border-t border-restaurant-brown/10">
                   <span>Estimated Total (Pay at Register):</span>

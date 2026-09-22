@@ -48,7 +48,7 @@ export default function ClosingScene({ onOpenOrder }) {
 
           <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
             <button 
-              onClick={onOpenOrder}
+              onClick={() => onOpenOrder(null)}
               className="btn-primary text-base !py-4 !px-8 shadow-thick"
             >
               <span>Pull Up a Chair Today</span>

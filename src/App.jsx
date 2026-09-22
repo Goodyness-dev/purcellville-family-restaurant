@@ -96,7 +96,11 @@ export default function App() {
   }, []);
 
   const handleOpenOrder = (item = null) => {
-    setPreselectedItem(item);
+    if (item && item.id && !item.nativeEvent && typeof item.preventDefault !== 'function') {
+      setPreselectedItem(item);
+    } else {
+      setPreselectedItem(null);
+    }
     setOrderModalOpen(true);
   };
 
@@ -160,7 +164,7 @@ export default function App() {
 
         {/* Section 04: The Table */}
         <TheTableSection 
-          onOpenOrder={() => handleOpenOrder(null)}
+          onOpenOrder={handleOpenOrder}
         />
 
         {/* Section 05: Featured Menu Gallery */}

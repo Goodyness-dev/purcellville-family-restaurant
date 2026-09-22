@@ -84,7 +84,7 @@ export default function FeaturedMenuSection({ onOpenMenu, onOpenOrder }) {
 
               <div className="p-6 pt-0 border-t border-restaurant-brown/5 dark:border-midnight-border mt-4 flex items-center justify-between">
                 <button 
-                  onClick={onOpenOrder}
+                  onClick={() => onOpenOrder(dish)}
                   className="text-xs font-mono font-bold text-restaurant-red hover:text-restaurant-redHover uppercase tracking-wider flex items-center gap-1.5"
                 >
                   <span>Order Takeout</span>
