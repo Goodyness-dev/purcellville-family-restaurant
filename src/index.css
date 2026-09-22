@@ -1,0 +1,114 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    color-scheme: light;
+  }
+  
+  html.dark {
+    color-scheme: dark;
+    background-color: #181614 !important;
+  }
+
+  body {
+    @apply bg-cream-200 text-restaurant-ink antialiased overflow-x-hidden transition-colors duration-200;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  }
+
+  html.dark body {
+    background-color: #181614 !important;
+    color: #FFFDF8 !important;
+  }
+
+  /* Custom Clean Scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #FAF6ED;
+  }
+  html.dark ::-webkit-scrollbar-track {
+    background: #181614;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #E7DBC7;
+    border-radius: 9999px;
+  }
+  html.dark ::-webkit-scrollbar-thumb {
+    background: #3D342E;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #A92E26;
+  }
+}
+
+@layer components {
+  .card-thick {
+    @apply bg-cream-50 dark:bg-midnight-card border-2 border-restaurant-brown/10 dark:border-midnight-border rounded-3xl shadow-thick transition-all duration-300;
+  }
+
+  .card-thick-hover {
+    @apply bg-cream-50 dark:bg-midnight-card border-2 border-restaurant-brown/10 dark:border-midnight-border rounded-3xl shadow-thick hover:shadow-thick-hover hover:-translate-y-1.5 transition-all duration-300;
+  }
+
+  .card-thick-red {
+    @apply bg-restaurant-red text-cream-50 border-2 border-restaurant-redHover rounded-3xl shadow-thick-red;
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-restaurant-red hover:bg-restaurant-redHover text-cream-50 font-semibold tracking-wide shadow-thick transition-all duration-200 hover:-translate-y-0.5 active:translate-y-0;
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-cream-50/90 dark:bg-midnight-card hover:bg-white text-restaurant-brown dark:text-cream-100 border-2 border-restaurant-brown/20 dark:border-midnight-border font-semibold tracking-wide shadow-sm hover:shadow-thick transition-all duration-200 hover:-translate-y-0.5;
+  }
+}
+
+/* Atmospheric Steam Animation */
+@keyframes steamDrift {
+  0% {
+    transform: translateY(0) translateX(0) scale(0.8);
+    opacity: 0;
+  }
+  25% {
+    opacity: 0.6;
+  }
+  75% {
+    opacity: 0.35;
+  }
+  100% {
+    transform: translateY(-80px) translateX(25px) scale(1.6);
+    opacity: 0;
+  }
+}
+
+.animate-steam-1 {
+  animation: steamDrift 4s ease-out infinite;
+}
+
+.animate-steam-2 {
+  animation: steamDrift 4.8s ease-out infinite 1.2s;
+}
+
+.animate-steam-3 {
+  animation: steamDrift 5.5s ease-out infinite 2.4s;
+}
+
+/* Ken Burns Subtle Pan Drift */
+@keyframes kenBurnsSlow {
+  0% {
+    transform: scale(1.0) translate(0%, 0%);
+  }
+  50% {
+    transform: scale(1.04) translate(-1%, -0.5%);
+  }
+  100% {
+    transform: scale(1.0) translate(0%, 0%);
+  }
+}
+
+.animate-ken-burns {
+  animation: kenBurnsSlow 24s ease-in-out infinite alternate;
+}

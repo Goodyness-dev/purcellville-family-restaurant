@@ -1,0 +1,22 @@
+# Purcellville Family Restaurant
+> Pull Up a Chair. There's Always Something Good on the Table.
+
+- Location: 110 W Main St, Purcellville, VA 20132
+- Phone: (540) 338-3000
+- Website: https://purcellvillefamilyrestaurant.com
+- Cuisine: American Comfort Food, Homestyle Cooking, Diner Breakfast & Lunch Platters
+- Established: 1983 on West Main Street
+
+## Operating Hours
+- Monday – Thursday: 6:00 AM – 8:00 PM
+- Friday: 6:00 AM – 8:30 PM (Dinner & Chef Specials)
+- Saturday: 6:30 AM – 8:30 PM (All-Day Breakfast)
+- Sunday: 7:00 AM – 3:00 PM (Sunday Family Brunch)
+
+## Signature Dishes
+- Slow-Sauced Country Ribs & Fries: Tender pork ribs smothered in barbecue glaze with golden skin-on fries and coleslaw ($16.95).
+- Homestyle Spaghetti with Meat Sauce: Hearty beef marinara on spaghetti with garlic toast on signature turquoise plate ($14.95).
+- Toasted Club & Broccoli Cheddar Soup: Thick grilled sourdough ham melt with chips and steaming soup ($12.95).
+- Western Loudoun Breakfast Burrito: Scrambled eggs, sausage, peppers, fresh berries, and dual house salsas ($11.95).
+- Buttermilk Pancake Stack: Griddled golden pancakes with hardwood bacon and maple syrup ($10.50).
+- Bottomless Fresh Diner Coffee: Served hot in heavy ceramic diner mugs ($2.95).
