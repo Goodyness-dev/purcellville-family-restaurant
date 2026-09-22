@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { 
   LayoutDashboard, ClipboardList, MessageSquare, 
   Settings, LogOut, ExternalLink, Search, 
-  Bell, Mail, Wrench, Menu, X, Plus, Calendar, ShieldCheck
+  Bell, Mail, UtensilsCrossed, Menu, X, Plus, Calendar, ShieldCheck, Coffee
 } from 'lucide-react';
 import DashboardOverview from './DashboardOverview';
 import OrdersView from './OrdersView';
@@ -14,7 +14,7 @@ import { authApi, quotesApi } from '../../services/api';
 import { BUSINESS_INFO } from '../../data/businessData';
 
 function getInitials(name) {
-  if (!name) return 'AD';
+  if (!name) return 'PF';
   const parts = name.trim().split(/\s+/);
   if (parts.length === 1) return parts[0].slice(0, 2).toUpperCase();
   return (parts[0][0] + parts[parts.length - 1][0]).toUpperCase();
@@ -37,9 +37,9 @@ export default function AdminLayout({ user, onLogout, onBackToSite }) {
   };
 
   const navItems = [
-    { id: 'dashboard', label: 'Dashboard', icon: LayoutDashboard },
-    { id: 'orders', label: 'Orders & Quotes', icon: ClipboardList, badge: stats.total > 0 ? stats.total : null },
-    { id: 'inbox', label: 'Customer Inbox', icon: MessageSquare, badge: stats.pending > 0 ? stats.pending : null },
+    { id: 'dashboard', label: 'Kitchen Dashboard', icon: LayoutDashboard },
+    { id: 'orders', label: 'Takeout & Table Orders', icon: ClipboardList, badge: stats.pending > 0 ? `${stats.pending} New` : null },
+    { id: 'inbox', label: 'Guest Messages & SMS', icon: MessageSquare, badge: null },
   ];
 
   return (
@@ -62,15 +62,15 @@ export default function AdminLayout({ user, onLogout, onBackToSite }) {
           {/* Logo Brand */}
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-3 min-w-0">
-              <div className="w-10 h-10 shrink-0 rounded-2xl bg-shop-red text-white flex items-center justify-center shadow-md shadow-shop-red/30">
-                <Wrench className="w-5 h-5" />
+              <div className="w-10 h-10 shrink-0 rounded-2xl bg-red-600 text-white flex items-center justify-center shadow-md shadow-red-600/30">
+                <UtensilsCrossed className="w-5 h-5" />
               </div>
               <div className="min-w-0 flex-1">
-                <span className="font-heading font-black text-base tracking-tight text-slate-900 block leading-tight truncate" title={BUSINESS_INFO.name}>
+                <span className="font-heading font-black text-sm tracking-tight text-slate-900 block leading-tight truncate" title={BUSINESS_INFO.name}>
                   {BUSINESS_INFO.name}
                 </span>
-                <span className="text-[11px] text-slate-400 font-semibold uppercase tracking-wider block">
-                  Shop Admin
+                <span className="text-[10px] text-red-600 font-bold uppercase tracking-wider block">
+                  Kitchen & Diner Admin
                 </span>
               </div>
             </div>
@@ -166,13 +166,13 @@ export default function AdminLayout({ user, onLogout, onBackToSite }) {
         </div>
 
         {/* Bottom Banner Card */}
-        <div className="p-4 m-4 rounded-2xl bg-gradient-to-br from-shop-red to-shop-redHover text-white space-y-2 shadow-lg shadow-shop-red/20">
+        <div className="p-4 m-4 rounded-2xl bg-gradient-to-br from-red-700 to-amber-700 text-white space-y-2 shadow-lg shadow-red-700/20">
           <div className="flex items-center space-x-2">
-            <span className="text-base">📱</span>
-            <h5 className="font-heading font-black text-xs truncate">{BUSINESS_INFO.name}</h5>
+            <span className="text-base">☕</span>
+            <h5 className="font-heading font-black text-xs truncate">Main St. Kitchen Live</h5>
           </div>
           <p className="text-[11px] text-white/90 leading-snug">
-            Manage customer quotes and communications directly on your phone from any browser.
+            Accepting takeout orders & table reservations for Purcellville locals 7 days a week.
           </p>
           <button
             onClick={onBackToSite}
@@ -239,15 +239,15 @@ export default function AdminLayout({ user, onLogout, onBackToSite }) {
 
             {/* Admin Profile Card */}
             <div className="flex items-center space-x-3 pl-2 border-l border-slate-200">
-              <div className="w-10 h-10 rounded-2xl bg-gradient-to-tr from-shop-red to-shop-redHover text-white font-black text-sm flex items-center justify-center shadow-sm">
-                {getInitials(BUSINESS_INFO.owner?.name || BUSINESS_INFO.name)}
+              <div className="w-10 h-10 rounded-2xl bg-gradient-to-tr from-red-600 to-amber-600 text-white font-black text-xs flex items-center justify-center shadow-sm">
+                PFR
               </div>
               <div className="hidden sm:block text-left">
                 <h4 className="text-xs font-black text-slate-900 leading-tight truncate max-w-[130px]">
-                  {BUSINESS_INFO.owner?.name || 'Shop Admin'}
+                  Kitchen Manager
                 </h4>
                 <span className="text-[11px] text-slate-400 block leading-tight truncate max-w-[130px]">
-                  {BUSINESS_INFO.address?.city ? `${BUSINESS_INFO.address.city}, ${BUSINESS_INFO.address.state || ''}` : 'Executive'}
+                  110 W Main St, VA
                 </span>
               </div>
             </div>

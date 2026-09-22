@@ -93,8 +93,11 @@ export default function TheTableSection({ onOpenOrder }) {
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                     loading="lazy"
                   />
-                  <div className="absolute top-3 left-3 bg-restaurant-ink/80 backdrop-blur-sm text-cream-50 text-[10px] font-mono uppercase tracking-wider px-3 py-1 rounded-full">
+                  <div className="absolute top-3 left-3 bg-restaurant-ink/85 backdrop-blur-sm text-cream-50 text-[10px] font-mono uppercase tracking-wider px-3 py-1 rounded-full border border-cream-50/20">
                     {plate.badge}
+                  </div>
+                  <div className="absolute top-3 right-3 bg-restaurant-red text-cream-50 text-xs font-mono font-bold px-2.5 py-1 rounded-full shadow-md">
+                    {plate.price}
                   </div>
                 </div>
 
@@ -107,10 +110,29 @@ export default function TheTableSection({ onOpenOrder }) {
                   </p>
                   
                   <div className="mt-4 pt-3 border-t border-restaurant-brown/10 dark:border-midnight-border flex items-center justify-between text-xs font-mono">
-                    <span className={`font-semibold ${isSelected ? 'text-restaurant-red' : 'text-restaurant-brown/60 dark:text-cream-400'}`}>
-                      {isSelected ? '● Viewing Details' : 'Click to inspect'}
-                    </span>
-                    <span className="text-restaurant-red group-hover:translate-x-1 transition-transform">→</span>
+                    {isSelected ? (
+                      <span className="inline-flex items-center gap-1.5 text-restaurant-red font-bold text-xs">
+                        <span className="w-2 h-2 rounded-full bg-restaurant-red animate-pulse" />
+                        <span>Active Plate</span>
+                      </span>
+                    ) : (
+                      <span className="text-xs text-restaurant-brown/60 dark:text-cream-400 group-hover:text-restaurant-brown dark:group-hover:text-cream-100 transition-colors">
+                        Explore Table
+                      </span>
+                    )}
+
+                    <button
+                      type="button"
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        onOpenOrder(plate);
+                      }}
+                      className="px-3 py-1 rounded-full bg-restaurant-red/10 hover:bg-restaurant-red text-restaurant-red hover:text-cream-50 font-bold transition-all flex items-center gap-1 active:scale-95"
+                      title={`Order ${plate.name} for takeout`}
+                    >
+                      <span>Order</span>
+                      <span>→</span>
+                    </button>
                   </div>
                 </div>
               </div>

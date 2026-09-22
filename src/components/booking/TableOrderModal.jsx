@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { CloseIcon, PhoneIcon, SpoonForkIcon, CheckIcon, CoffeeIcon } from '../common/Icons';
 import { SERVICES, CATEGORIES } from '../../data/servicesData';
 import { BUSINESS_INFO } from '../../data/businessData';
+import { quotesApi } from '../../services/api';
 
 export default function TableOrderModal({ isOpen, onClose, preselectedItem }) {
   const [orderType, setOrderType] = useState('takeout'); // 'takeout' | 'table'
@@ -92,6 +93,33 @@ export default function TableOrderModal({ isOpen, onClose, preselectedItem }) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    const orderItems = Object.values(selectedItems).map(({ item, count }) => ({
+      title: item.title || item.name || 'Custom Plate',
+      count,
+      price: item.price || `$${((item.numericPrice || 12.95) * count).toFixed(2)}`
+    }));
+
+    const orderPayload = {
+      customer_name: formData.name,
+      name: formData.name,
+      customer_phone: formData.phone,
+      phone: formData.phone,
+      orderType: orderType,
+      serviceCategory: orderType === 'takeout' ? 'Takeout Pickup' : 'Dine-In Table Reservation',
+      detailedService: orderType === 'takeout' 
+        ? `Takeout Order (${totalCount} items • ${formData.time})`
+        : `Dine-In Table (Party of ${formData.guests} • ${formData.time})`,
+      items: orderItems,
+      itemsSummary: orderItems.map(i => `${i.count}x ${i.title}`).join(', ') || (orderType === 'takeout' ? 'Kitchen Takeout Order' : 'Table Reservation'),
+      time: formData.time,
+      guests: orderType === 'table' ? formData.guests : null,
+      details: formData.notes || 'Submitted via customer online order.',
+      quoted_price: `$${subtotal.toFixed(2)}`,
+      totalPrice: `$${subtotal.toFixed(2)}`,
+      status: 'pending'
+    };
+
+    quotesApi.submitPublicQuote(orderPayload).catch(err => console.warn('Submit note:', err));
     setSubmitted(true);
   };
 

@@ -142,8 +142,8 @@ export default function AdminSettings() {
   if (isLoading) {
     return (
       <div className="flex flex-col items-center justify-center py-20 text-slate-400 space-y-3">
-        <Loader2 className="w-8 h-8 animate-spin text-red-600" />
-        <span className="text-sm font-medium">Loading shop configurations...</span>
+        <Loader2 className="w-8 h-8 animate-spin text-amber-600" />
+        <span className="text-sm font-medium">Loading restaurant configurations...</span>
       </div>
     );
   }
@@ -172,11 +172,11 @@ export default function AdminSettings() {
             <div className="flex items-center space-x-2.5">
               <span className="text-2xl">📱</span>
               <h2 className="text-xl sm:text-2xl font-black font-heading text-slate-900">
-                Telegram Instant Order Alerts
+                Telegram Live Order & Table Alerts
               </h2>
             </div>
             <p className="text-xs sm:text-sm text-slate-500 mt-1">
-              Receive live notifications on your phone the instant a customer requests a quote on your website.
+              Receive live alerts on kitchen phones the instant a diner places a takeout order or reserves a table.
             </p>
           </div>
 
@@ -185,7 +185,7 @@ export default function AdminSettings() {
               type="checkbox"
               checked={Boolean(settings.telegram_enabled)}
               onChange={(e) => setSettings({ ...settings, telegram_enabled: e.target.checked })}
-              className="w-4 h-4 text-red-600 rounded bg-white border-slate-300 focus:ring-red-600"
+              className="w-4 h-4 text-amber-600 rounded bg-white border-slate-300 focus:ring-amber-600"
             />
             <span className="text-xs font-bold text-slate-900">Enable Telegram Alerts</span>
           </label>
@@ -194,11 +194,11 @@ export default function AdminSettings() {
         {/* Setup Walkthrough */}
         <div className="p-4 rounded-2xl bg-slate-50 border border-slate-200/80 text-xs text-slate-700 space-y-2">
           <div className="font-bold text-slate-900 flex items-center space-x-1.5 text-sm">
-            <HelpCircle className="w-4 h-4 text-shop-red" />
-            <span>How to set up Telegram alerts for {BUSINESS_INFO.name} (Takes 60 seconds):</span>
+            <HelpCircle className="w-4 h-4 text-amber-600" />
+            <span>How to set up instant phone alerts for {BUSINESS_INFO.name} (Takes 60 seconds):</span>
           </div>
           <ol className="list-decimal list-inside space-y-1 text-slate-600 leading-relaxed pl-1">
-            <li>Open Telegram on your phone or computer, search for <strong className="text-slate-900">@BotFather</strong>, send <code className="text-shop-red bg-shop-light px-1 py-0.5 rounded font-mono font-bold">/newbot</code> and copy your HTTP API Token.</li>
+            <li>Open Telegram on your phone or kitchen iPad, search for <strong className="text-slate-900">@BotFather</strong>, send <code className="text-amber-700 bg-amber-50 px-1 py-0.5 rounded font-mono font-bold">/newbot</code> and copy your HTTP API Token.</li>
             <li>Search for <strong className="text-slate-900">@userinfobot</strong> on Telegram and tap Start to see your numeric <strong className="text-slate-900">Id</strong> (Chat ID).</li>
             <li>Paste your Token and Chat ID below, click <strong className="text-slate-900">Test Connection</strong>, and verify you get the test ping on your phone!</li>
           </ol>
@@ -216,7 +216,7 @@ export default function AdminSettings() {
                 value={settings.telegram_bot_token || ''}
                 onChange={(e) => setSettings({ ...settings, telegram_bot_token: e.target.value })}
                 placeholder="e.g. 7123456789:AAH..."
-                className="w-full bg-slate-50 border border-slate-200 focus:border-red-600 focus:bg-white rounded-xl px-4 py-3 text-sm text-slate-900 placeholder-slate-400 outline-none font-mono transition"
+                className="w-full bg-slate-50 border border-slate-200 focus:border-amber-600 focus:bg-white rounded-xl px-4 py-3 text-sm text-slate-900 placeholder-slate-400 outline-none font-mono transition"
               />
               <button
                 type="button"
@@ -237,7 +237,7 @@ export default function AdminSettings() {
               value={settings.telegram_chat_id || ''}
               onChange={(e) => setSettings({ ...settings, telegram_chat_id: e.target.value })}
               placeholder="e.g. 123456789"
-              className="w-full bg-slate-50 border border-slate-200 focus:border-red-600 focus:bg-white rounded-xl px-4 py-3 text-sm text-slate-900 placeholder-slate-400 outline-none font-mono transition"
+              className="w-full bg-slate-50 border border-slate-200 focus:border-amber-600 focus:bg-white rounded-xl px-4 py-3 text-sm text-slate-900 placeholder-slate-400 outline-none font-mono transition"
             />
           </div>
         </div>
@@ -248,12 +248,12 @@ export default function AdminSettings() {
             type="button"
             onClick={handleTestTelegram}
             disabled={isTestingTelegram}
-            className="py-2.5 px-5 rounded-xl bg-slate-100 hover:bg-slate-200 border border-slate-200 text-slate-800 font-bold text-xs flex items-center space-x-2 transition active:scale-95 disabled:opacity-50"
+            className="py-2.5 px-5 rounded-xl bg-slate-100 hover:bg-slate-200 border border-slate-200 text-slate-800 font-bold text-xs flex items-center space-x-2 transition active:scale-95 disabled:opacity-50 cursor-pointer"
           >
             {isTestingTelegram ? (
-              <><Loader2 className="w-4 h-4 animate-spin text-red-600" /><span>Sending Test Ping...</span></>
+              <><Loader2 className="w-4 h-4 animate-spin text-amber-600" /><span>Sending Test Ping...</span></>
             ) : (
-              <><Send className="w-4 h-4 text-red-600" /><span>Test Telegram Connection</span></>
+              <><Send className="w-4 h-4 text-amber-600" /><span>Test Telegram Connection</span></>
             )}
           </button>
 
@@ -274,11 +274,11 @@ export default function AdminSettings() {
           <div className="flex items-center space-x-2.5">
             <span className="text-2xl">✉️</span>
             <h2 className="text-xl sm:text-2xl font-black font-heading text-slate-900">
-              Email Automation (Customer Quotes & Alerts)
+              Email & SMS Automation (Takeout Alerts & Table Confirmations)
             </h2>
           </div>
           <p className="text-xs sm:text-sm text-slate-500 mt-1">
-            Automates sending official branded price quotes to customer email addresses and sending you quote alert summaries.
+            Automates dispatching branded order receipts to guest emails and kitchen alerts on every submission.
           </p>
         </div>
 
@@ -293,7 +293,7 @@ export default function AdminSettings() {
               value={settings.emailjs_service_id || ''}
               onChange={(e) => setSettings({ ...settings, emailjs_service_id: e.target.value })}
               placeholder="e.g. service_xxxxxx"
-              className="w-full bg-slate-50 border border-slate-200 focus:border-red-600 focus:bg-white rounded-xl px-4 py-3 text-sm text-slate-900 placeholder-slate-400 outline-none font-mono transition"
+              className="w-full bg-slate-50 border border-slate-200 focus:border-amber-600 focus:bg-white rounded-xl px-4 py-3 text-sm text-slate-900 placeholder-slate-400 outline-none font-mono transition"
             />
           </div>
 
@@ -306,36 +306,36 @@ export default function AdminSettings() {
               value={settings.emailjs_public_key || ''}
               onChange={(e) => setSettings({ ...settings, emailjs_public_key: e.target.value })}
               placeholder="e.g. user_xxxxxxxxx"
-              className="w-full bg-slate-50 border border-slate-200 focus:border-red-600 focus:bg-white rounded-xl px-4 py-3 text-sm text-slate-900 placeholder-slate-400 outline-none font-mono transition"
+              className="w-full bg-slate-50 border border-slate-200 focus:border-amber-600 focus:bg-white rounded-xl px-4 py-3 text-sm text-slate-900 placeholder-slate-400 outline-none font-mono transition"
             />
           </div>
 
           <div>
             <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">
-              Customer Quote Template ID
+              Guest Receipt & Confirmation Template ID
             </label>
             <input
               type="text"
               value={settings.emailjs_template_id_quote || ''}
               onChange={(e) => setSettings({ ...settings, emailjs_template_id_quote: e.target.value })}
-              placeholder="e.g. template_customer_quote"
-              className="w-full bg-slate-50 border border-slate-200 focus:border-shop-red focus:bg-white rounded-xl px-4 py-3 text-sm text-slate-900 placeholder-slate-400 outline-none font-mono transition"
+              placeholder="e.g. template_guest_order"
+              className="w-full bg-slate-50 border border-slate-200 focus:border-amber-600 focus:bg-white rounded-xl px-4 py-3 text-sm text-slate-900 placeholder-slate-400 outline-none font-mono transition"
             />
-            <span className="text-[11px] text-slate-400 mt-1 block">Used when clicking "Send Quote to Customer".</span>
+            <span className="text-[11px] text-slate-400 mt-1 block">Sent to guest on online order or dispatch alert.</span>
           </div>
 
           <div>
             <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">
-              New Order Notification Template ID
+              Kitchen Manager New Order Alert Template ID
             </label>
             <input
               type="text"
               value={settings.emailjs_template_id_notify || ''}
               onChange={(e) => setSettings({ ...settings, emailjs_template_id_notify: e.target.value })}
-              placeholder="e.g. template_admin_alert"
-              className="w-full bg-slate-50 border border-slate-200 focus:border-shop-red focus:bg-white rounded-xl px-4 py-3 text-sm text-slate-900 placeholder-slate-400 outline-none font-mono transition"
+              placeholder="e.g. template_kitchen_alert"
+              className="w-full bg-slate-50 border border-slate-200 focus:border-amber-600 focus:bg-white rounded-xl px-4 py-3 text-sm text-slate-900 placeholder-slate-400 outline-none font-mono transition"
             />
-            <span className="text-[11px] text-slate-400 mt-1 block">Alerts shop email when customer submits a quote request.</span>
+            <span className="text-[11px] text-slate-400 mt-1 block">Alerts restaurant inbox when a diner places an order.</span>
           </div>
         </div>
 
@@ -377,68 +377,70 @@ export default function AdminSettings() {
         </div>
       </div>
 
-      {/* SECTION 3: Shop Profile & Defaults */}
+      {/* SECTION 3: Restaurant Profile & Defaults */}
       <div className="bg-white border border-slate-200/80 rounded-3xl p-6 sm:p-8 shadow-xs space-y-6">
         <div className="border-b border-slate-100 pb-5">
           <div className="flex items-center space-x-2.5">
-            <span className="text-2xl">🏪</span>
+            <span className="text-2xl">🍳</span>
             <h2 className="text-xl sm:text-2xl font-black font-heading text-slate-900">
-              Shop Profile & Quote Defaults
+              Restaurant Profile & Kitchen Defaults
             </h2>
           </div>
           <p className="text-xs sm:text-sm text-slate-500 mt-1">
-            Information displayed on official email estimates and header footers.
+            Information displayed on guest order receipts, email confirmations, and website tickets.
           </p>
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div>
-            <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">Shop Phone</label>
+            <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">Restaurant Phone</label>
             <input
               type="text"
               value={settings.shop_phone || ''}
               onChange={(e) => setSettings({ ...settings, shop_phone: e.target.value })}
-              className="w-full bg-slate-50 border border-slate-200 focus:border-red-600 focus:bg-white rounded-xl px-4 py-3 text-sm text-slate-900 outline-none transition"
+              className="w-full bg-slate-50 border border-slate-200 focus:border-amber-600 focus:bg-white rounded-xl px-4 py-3 text-sm text-slate-900 outline-none transition"
             />
           </div>
 
           <div>
-            <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">Shop Contact / Alert Email</label>
+            <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">Kitchen Contact / Alert Email</label>
             <input
               type="email"
               value={settings.shop_email || ''}
               onChange={(e) => setSettings({ ...settings, shop_email: e.target.value })}
-              className="w-full bg-slate-50 border border-slate-200 focus:border-red-600 focus:bg-white rounded-xl px-4 py-3 text-sm text-slate-900 outline-none transition"
+              className="w-full bg-slate-50 border border-slate-200 focus:border-amber-600 focus:bg-white rounded-xl px-4 py-3 text-sm text-slate-900 outline-none transition"
             />
           </div>
 
           <div className="sm:col-span-2">
-            <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">Shop Address</label>
+            <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">Restaurant Physical Address</label>
             <input
               type="text"
               value={settings.shop_address || ''}
               onChange={(e) => setSettings({ ...settings, shop_address: e.target.value })}
-              className="w-full bg-slate-50 border border-slate-200 focus:border-red-600 focus:bg-white rounded-xl px-4 py-3 text-sm text-slate-900 outline-none transition"
+              className="w-full bg-slate-50 border border-slate-200 focus:border-amber-600 focus:bg-white rounded-xl px-4 py-3 text-sm text-slate-900 outline-none transition"
             />
           </div>
 
           <div className="sm:col-span-2">
-            <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">Standard Warranty Coverage</label>
+            <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">Kitchen Prep & Freshness Guarantee</label>
             <input
               type="text"
               value={settings.default_warranty || ''}
               onChange={(e) => setSettings({ ...settings, default_warranty: e.target.value })}
-              className="w-full bg-slate-50 border border-slate-200 focus:border-red-600 focus:bg-white rounded-xl px-4 py-3 text-sm text-slate-900 outline-none transition"
+              placeholder="e.g. 100% Fresh Homestyle Quality Guarantee"
+              className="w-full bg-slate-50 border border-slate-200 focus:border-amber-600 focus:bg-white rounded-xl px-4 py-3 text-sm text-slate-900 outline-none transition"
             />
           </div>
 
           <div className="sm:col-span-2">
-            <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">Default Quote Message Template</label>
+            <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">Default Guest Pickup Alert Template</label>
             <textarea
               rows={3}
               value={settings.default_quote_notes || ''}
               onChange={(e) => setSettings({ ...settings, default_quote_notes: e.target.value })}
-              className="w-full bg-slate-50 border border-slate-200 focus:border-red-600 focus:bg-white rounded-xl p-4 text-sm text-slate-900 outline-none transition"
+              placeholder="e.g. Your order is hot and ready for pickup at our front counter at 110 W Main St!"
+              className="w-full bg-slate-50 border border-slate-200 focus:border-amber-600 focus:bg-white rounded-xl p-4 text-sm text-slate-900 outline-none transition"
             />
           </div>
         </div>
@@ -449,7 +451,7 @@ export default function AdminSettings() {
             type="button"
             onClick={handleSaveSettings}
             disabled={isSaving}
-            className="py-3.5 px-8 bg-red-600 hover:bg-red-700 disabled:opacity-50 text-white font-bold text-sm rounded-xl transition shadow-md shadow-red-600/20 flex items-center space-x-2 active:scale-95 cursor-pointer"
+            className="py-3.5 px-8 bg-amber-600 hover:bg-amber-700 disabled:opacity-50 text-white font-bold text-sm rounded-xl transition shadow-md shadow-amber-600/20 flex items-center space-x-2 active:scale-95 cursor-pointer"
           >
             {isSaving ? (
               <><Loader2 className="w-4 h-4 animate-spin" /><span>Saving Changes...</span></>
@@ -464,13 +466,13 @@ export default function AdminSettings() {
       <div className="bg-white border border-slate-200/80 rounded-3xl p-6 sm:p-8 shadow-xs space-y-6">
         <div className="border-b border-slate-100 pb-5">
           <div className="flex items-center space-x-2.5">
-            <Key className="w-5 h-5 text-red-600" />
+            <Key className="w-5 h-5 text-amber-600" />
             <h2 className="text-xl sm:text-2xl font-black font-heading text-slate-900">
-              Change Admin Password
+              Change Kitchen Admin Password
             </h2>
           </div>
           <p className="text-xs sm:text-sm text-slate-500 mt-1">
-            Update your private password anytime so nobody else can access your shop management portal.
+            Update your private password anytime so unauthorized staff cannot modify orders or restaurant settings.
           </p>
         </div>
 
@@ -496,7 +498,7 @@ export default function AdminSettings() {
               value={oldPassword}
               onChange={(e) => setOldPassword(e.target.value)}
               placeholder="Current admin password"
-              className="w-full bg-slate-50 border border-slate-200 focus:border-shop-red focus:bg-white rounded-xl px-4 py-3 text-sm text-slate-900 outline-none transition"
+              className="w-full bg-slate-50 border border-slate-200 focus:border-amber-600 focus:bg-white rounded-xl px-4 py-3 text-sm text-slate-900 outline-none transition"
               required
             />
           </div>
@@ -508,7 +510,7 @@ export default function AdminSettings() {
               value={newPassword}
               onChange={(e) => setNewPassword(e.target.value)}
               placeholder="Minimum 6 characters"
-              className="w-full bg-slate-50 border border-slate-200 focus:border-red-600 focus:bg-white rounded-xl px-4 py-3 text-sm text-slate-900 outline-none transition"
+              className="w-full bg-slate-50 border border-slate-200 focus:border-amber-600 focus:bg-white rounded-xl px-4 py-3 text-sm text-slate-900 outline-none transition"
               required
             />
           </div>
@@ -520,7 +522,7 @@ export default function AdminSettings() {
               value={confirmPassword}
               onChange={(e) => setConfirmPassword(e.target.value)}
               placeholder="Re-type new password"
-              className="w-full bg-slate-50 border border-slate-200 focus:border-red-600 focus:bg-white rounded-xl px-4 py-3 text-sm text-slate-900 outline-none transition"
+              className="w-full bg-slate-50 border border-slate-200 focus:border-amber-600 focus:bg-white rounded-xl px-4 py-3 text-sm text-slate-900 outline-none transition"
               required
             />
           </div>
@@ -528,12 +530,12 @@ export default function AdminSettings() {
           <button
             type="submit"
             disabled={isChangingPass}
-            className="py-3 px-6 bg-slate-100 hover:bg-slate-200 border border-slate-200 text-slate-800 font-bold text-xs rounded-xl transition flex items-center space-x-2 active:scale-95"
+            className="py-3 px-6 bg-slate-100 hover:bg-slate-200 border border-slate-200 text-slate-800 font-bold text-xs rounded-xl transition flex items-center space-x-2 active:scale-95 cursor-pointer"
           >
             {isChangingPass ? (
-              <><Loader2 className="w-4 h-4 animate-spin text-red-600" /><span>Updating Password...</span></>
+              <><Loader2 className="w-4 h-4 animate-spin text-amber-600" /><span>Updating Password...</span></>
             ) : (
-              <><Lock className="w-4 h-4 text-red-600" /><span>Update Private Password</span></>
+              <><Lock className="w-4 h-4 text-amber-600" /><span>Update Private Password</span></>
             )}
           </button>
         </form>
