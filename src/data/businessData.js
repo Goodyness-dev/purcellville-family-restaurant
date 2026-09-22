@@ -9,21 +9,21 @@ export const BUSINESS_INFO = {
     zip: "20132",
     formatted: "110 W Main St, Purcellville, VA 20132",
   },
-  phone: "(540) 338-3000",
-  secondaryPhone: "(540) 338-3001",
+  phone: "(540) 338-0400",
+  secondaryPhone: "(540) 338-3000",
   website: "purcellvillefamilyrestaurant.com",
   email: "hello@purcellvillefamilyrestaurant.com",
   googleMapsLink: "https://www.google.com/maps/dir/?api=1&destination=Purcellville+Family+Restaurant,+110+W+Main+St,+Purcellville,+VA+20132",
   googleMapsEmbedUrl: "https://maps.google.com/maps?q=Purcellville%20Family%20Restaurant%2C%20110%20W%20Main%20St%2C%20Purcellville%2C%20VA%2020132&t=&z=16&ie=UTF8&iwloc=&output=embed",
   
   hours: [
-    { day: "Monday", open: "6:00 AM", close: "8:00 PM", note: "Breakfast and Lunch Specials" },
-    { day: "Tuesday", open: "6:00 AM", close: "8:00 PM", note: "" },
-    { day: "Wednesday", open: "6:00 AM", close: "8:00 PM", note: "" },
-    { day: "Thursday", open: "6:00 AM", close: "8:00 PM", note: "" },
-    { day: "Friday", open: "6:00 AM", close: "8:30 PM", note: "Homestyle Dinner Specials" },
-    { day: "Saturday", open: "6:30 AM", close: "8:30 PM", note: "All Day Country Breakfast" },
-    { day: "Sunday", open: "7:00 AM", close: "3:00 PM", note: "Sunday Family Brunch" },
+    { day: "Monday", open: "6:00 AM", close: "8:00 PM", note: "All-Day Breakfast & Daily Specials" },
+    { day: "Tuesday", open: "6:00 AM", close: "8:00 PM", note: "All-Day Breakfast" },
+    { day: "Wednesday", open: "6:00 AM", close: "8:00 PM", note: "All-Day Breakfast" },
+    { day: "Thursday", open: "6:00 AM", close: "8:00 PM", note: "All-Day Breakfast" },
+    { day: "Friday", open: "6:00 AM", close: "8:30 PM", note: "Homestyle Dinners & Specials" },
+    { day: "Saturday", open: "6:30 AM", close: "8:30 PM", note: "Famous Frisbee Pancakes All Day" },
+    { day: "Sunday", open: "7:00 AM", close: "3:00 PM", note: "Sunday Family Breakfast & Brunch" },
   ],
 
   history: [
@@ -35,7 +35,7 @@ export const BUSINESS_INFO = {
     {
       year: "2001",
       title: "The Town Gathering Spot",
-      description: "Became the go-to morning spot where farmers, local business owners, teachers, and families gather for hot coffee and fresh buttermilk pancakes."
+      description: "Became the go-to morning spot where farmers, local business owners, teachers, and families gather for hot coffee and giant buttermilk pancakes."
     },
     {
       year: "2018",
@@ -50,8 +50,8 @@ export const BUSINESS_INFO = {
   ],
 
   owner: {
-    name: "The Family and Kitchen Team",
-    role: "Proprietors and Home Cooks",
+    name: "The Family & Kitchen Staff",
+    role: "Proprietors & Home Cooks",
     quote: "We believe a family restaurant isn't just about what's on the plate — it's about the feeling when you walk in the front door. Pull up a chair. There's always something good on the table."
   },
 
@@ -62,7 +62,7 @@ export const BUSINESS_INFO = {
       source: "Google Review",
       rating: 5,
       date: "2 weeks ago",
-      comment: "Hands down the best breakfast in Western Loudoun! The breakfast burrito is packed, the coffee never runs dry, and the servers make you feel like family the second you sit down. A true local gem."
+      comment: "The pancakes are literally the size of frisbees and so fluffy! The breakfast burrito is packed, the coffee never runs dry, and the servers make you feel like family the second you sit down."
     },
     {
       author: "Robert T.",
@@ -70,7 +70,7 @@ export const BUSINESS_INFO = {
       source: "Yelp",
       rating: 5,
       date: "1 month ago",
-      comment: "Classic small-town diner comfort at its finest. The toasted club sandwich with creamy broccoli cheddar soup and potato chips hit the spot completely. Generous portions and very fair prices."
+      comment: "Classic small-town diner comfort at its finest. The toasted club sandwich with creamy soup and potato chips hit the spot completely. Generous portions, fair prices, and pay at the register when you finish!"
     },
     {
       author: "Evelyn K.",
@@ -78,7 +78,7 @@ export const BUSINESS_INFO = {
       source: "Google Review",
       rating: 5,
       date: "3 weeks ago",
-      comment: "We brought our whole family of seven here for dinner. The spaghetti with homemade meat sauce was fantastic, and the ribs literally fell off the bone. Nothing fancy, just downright delicious honest cooking."
+      comment: "We brought our whole family here for dinner. The spaghetti with homemade meat sauce was fantastic, and the sauced ribs literally fell off the bone. Nothing fancy, just downright delicious honest cooking."
     },
     {
       author: "David H.",
@@ -86,7 +86,7 @@ export const BUSINESS_INFO = {
       source: "Yelp",
       rating: 5,
       date: "2 months ago",
-      comment: "Old-school Virginia hospitality. You can hear the sizzling grill, smell the fresh coffee, and everyone is smiling. There's no place like Purcellville Family Restaurant."
+      comment: "Old-school Virginia hospitality. Corned beef hash cooked crispy on the flat top, blueberry pancakes, hot coffee, and everyone is smiling. A true Western Loudoun staple."
     }
   ]
 };
