@@ -13,7 +13,7 @@ export default function LocationHoursSection() {
         <div className="max-w-3xl mb-16">
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-restaurant-red/10 border border-restaurant-red/20 text-restaurant-red text-xs font-mono font-semibold tracking-wider uppercase mb-4">
             <MapPinIcon className="w-4 h-4" />
-            <span>// 08 FIND OUR FRONT DOOR</span>
+            <span>// 08 FIND OUR FRONT DOOR ON MAIN ST.</span>
           </div>
 
           <h2 className="font-serif font-bold text-4xl sm:text-6xl lg:text-7xl text-restaurant-brown dark:text-cream-50 tracking-tight leading-[1.04]">
@@ -21,7 +21,7 @@ export default function LocationHoursSection() {
             <span className="italic font-light text-restaurant-red">PURCELLVILLE.</span>
           </h2>
           <p className="mt-4 text-base sm:text-lg text-restaurant-ink/75 dark:text-cream-200/75 font-sans">
-            Centrally located on historic West Main Street. Ample street and nearby parking available.
+            Located right at 110 W Main St in historic downtown Purcellville (right next to Catoctin Creek Distilling). Free street and lot parking.
           </p>
         </div>
 
@@ -86,6 +86,9 @@ export default function LocationHoursSection() {
                 <p className="text-sm font-sans text-restaurant-ink/70 dark:text-cream-300">
                   Purcellville, VA 20132
                 </p>
+                <p className="text-xs text-restaurant-brown/60 dark:text-cream-400 mt-1 font-mono">
+                  (Next to Catoctin Creek Distilling Co.)
+                </p>
               </div>
 
               <div className="pt-4 border-t border-restaurant-brown/10 dark:border-midnight-border flex flex-col sm:flex-row gap-3">
@@ -94,11 +97,11 @@ export default function LocationHoursSection() {
                   className="btn-primary flex-1 !py-3 text-xs justify-center"
                 >
                   <PhoneIcon className="w-4 h-4" />
-                  <span>Call (540) 338-3000</span>
+                  <span>Call (540) 338-0400</span>
                 </a>
 
                 <a 
-                  href={BUSINESS_INFO.googleMapsLink}
+                  href="https://www.google.com/maps/dir/?api=1&destination=110+W+Main+St,+Purcellville,+VA+20132"
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="btn-secondary flex-1 !py-3 text-xs justify-center"
@@ -111,33 +114,33 @@ export default function LocationHoursSection() {
 
           </div>
 
-          {/* Right Column: Exterior Photo & Interactive Map Embed */}
+          {/* Right Column: REAL Exterior Building Photo & Working Google Map Embed */}
           <div className="lg:col-span-7 space-y-6">
             
-            {/* Exterior Photo Banner */}
+            {/* REAL Building Exterior Photo */}
             <div className="rounded-3xl overflow-hidden shadow-thick border-2 border-restaurant-brown/10 dark:border-midnight-border group relative aspect-[16/9]">
               <img 
                 src="/images/restaurant-exterior.jpg" 
-                alt="Purcellville Family Restaurant exterior on Main Street in Purcellville, Virginia" 
+                alt="Real Purcellville Family Restaurant building at 110 W Main St next to Catoctin Creek Distilling in Purcellville, Virginia" 
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                 loading="lazy"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent flex items-end p-6">
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent flex items-end p-6">
                 <div>
                   <span className="text-xs font-mono uppercase tracking-wider text-restaurant-gold font-bold">
-                    Historic Downtown Purcellville
+                    Actual Main Street Building
                   </span>
                   <h3 className="font-serif font-bold text-xl sm:text-2xl text-cream-50">
-                    Purcellville Family Restaurant Facade
+                    110 W Main St, Purcellville, Virginia
                   </h3>
                 </div>
               </div>
             </div>
 
-            {/* Interactive Map Embed */}
-            <div className="rounded-3xl overflow-hidden shadow-thick border-2 border-restaurant-brown/10 dark:border-midnight-border h-72 sm:h-80 relative">
+            {/* Verified Working Google Map Embed */}
+            <div className="rounded-3xl overflow-hidden shadow-thick border-2 border-restaurant-brown/10 dark:border-midnight-border h-72 sm:h-80 relative bg-cream-200 dark:bg-midnight">
               <iframe 
-                src={BUSINESS_INFO.googleMapsEmbedUrl} 
+                src="https://maps.google.com/maps?q=110+W+Main+St,+Purcellville,+VA+20132&t=&z=16&ie=UTF8&iwloc=&output=embed" 
                 width="100%" 
                 height="100%" 
                 style={{ border: 0 }} 
@@ -145,15 +148,15 @@ export default function LocationHoursSection() {
                 loading="lazy" 
                 referrerPolicy="no-referrer-when-downgrade"
                 title="Purcellville Family Restaurant Map Location"
-                className="w-full h-full filter contrast-[0.95] dark:invert-[0.9] dark:hue-rotate-180"
+                className="w-full h-full filter contrast-[0.95]"
               />
               <a 
-                href={BUSINESS_INFO.googleMapsLink}
+                href="https://www.google.com/maps/dir/?api=1&destination=110+W+Main+St,+Purcellville,+VA+20132"
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="absolute bottom-4 right-4 bg-cream-50/95 dark:bg-midnight-pure/95 text-restaurant-brown dark:text-cream-100 text-xs font-mono px-3.5 py-2 rounded-full shadow-md border border-restaurant-brown/10 flex items-center gap-1.5 hover:bg-restaurant-red hover:text-cream-50 transition-colors"
+                className="absolute bottom-4 right-4 bg-cream-50/95 dark:bg-midnight-pure/95 text-restaurant-brown dark:text-cream-100 text-xs font-mono px-4 py-2 rounded-full shadow-lg border border-restaurant-brown/15 flex items-center gap-2 hover:bg-restaurant-red hover:text-cream-50 transition-colors"
               >
-                <span>Open in Google Maps</span>
+                <span>Open in Google Maps App</span>
                 <ExternalLinkIcon className="w-3.5 h-3.5" />
               </a>
             </div>

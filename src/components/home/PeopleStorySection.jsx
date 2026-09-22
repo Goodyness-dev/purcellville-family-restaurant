@@ -1,5 +1,5 @@
 import React from 'react';
-import { StarIcon, CoffeeIcon } from '../common/Icons';
+import { StarIcon, CoffeeIcon, SpoonForkIcon } from '../common/Icons';
 import { BUSINESS_INFO } from '../../data/businessData';
 
 export default function PeopleStorySection() {
@@ -11,7 +11,7 @@ export default function PeopleStorySection() {
         <div className="text-center max-w-3xl mx-auto mb-16">
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-restaurant-red/10 border border-restaurant-red/20 text-restaurant-red text-xs font-mono font-semibold tracking-wider uppercase mb-4">
             <CoffeeIcon className="w-4 h-4" />
-            <span>// 07 COMMUNITY & HOSPITALITY</span>
+            <span>// 07 MEET OUR REAL FAMILY TEAM</span>
           </div>
 
           <h2 className="font-serif font-bold text-4xl sm:text-5xl lg:text-6xl text-restaurant-brown dark:text-cream-50 tracking-tight leading-tight">
@@ -19,28 +19,28 @@ export default function PeopleStorySection() {
             <span className="italic font-light text-restaurant-red">BETTER TOGETHER.</span>
           </h2>
           <p className="mt-4 text-base sm:text-lg text-restaurant-ink/75 dark:text-cream-200/75 font-sans leading-relaxed">
-            The heart of Purcellville Family Restaurant has always been the wonderful community that fills our booths each morning and afternoon.
+            The heart of Purcellville Family Restaurant has always been the family and kitchen staff who welcome you with a smile every day.
           </p>
         </div>
 
-        {/* Feature Split: Hospitality Photo & Story */}
+        {/* Feature Split: REAL Owners & Staff Photo & Story */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center mb-20">
           
           <div className="lg:col-span-7">
             <div className="relative rounded-3xl overflow-hidden shadow-thick border-4 border-cream-50 dark:border-midnight-border group">
               <img 
-                src="/images/restaurant-interior.jpg" 
-                alt="Purcellville Family Restaurant dining room with waitress pouring hot coffee" 
+                src="/images/owners-team.jpg" 
+                alt="Purcellville Family Restaurant owners and team smiling inside the diner" 
                 className="w-full h-auto object-cover group-hover:scale-[1.02] transition-transform duration-700"
                 loading="lazy"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-transparent to-transparent flex items-end p-6 sm:p-8">
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent flex items-end p-6 sm:p-8">
                 <div>
-                  <span className="text-xs font-mono text-restaurant-gold uppercase tracking-wider">
-                    Morning Service on Main Street
+                  <span className="text-xs font-mono text-restaurant-gold uppercase tracking-wider font-bold">
+                    The Family Behind Your Table
                   </span>
                   <p className="text-cream-50 font-serif font-bold text-lg sm:text-2xl mt-1">
-                    "Coffee is always hot and you're treated like old friends from day one."
+                    "Coffee is always hot and you're treated like family from the moment you sit down."
                   </p>
                 </div>
               </div>
@@ -53,7 +53,7 @@ export default function PeopleStorySection() {
                 Four Decades on West Main
               </h3>
               <p className="mt-3 text-sm sm:text-base text-restaurant-ink/80 dark:text-cream-200/80 font-sans leading-relaxed">
-                Generations of Purcellville kids grew up eating silver dollar pancakes here on Saturday mornings, celebrated high school sports victories at our corner booths, and now bring their own children back to the same table.
+                Generations of Purcellville kids grew up eating frisbee pancakes here, locals celebrate milestones at our corner booths, and the same friendly faces cook your eggs and flip your griddled burgers every single morning.
               </p>
               <div className="mt-6 pt-6 border-t border-restaurant-brown/10 dark:border-midnight-border flex items-center justify-between text-xs font-mono">
                 <span className="text-restaurant-red font-bold">110 W MAIN ST</span>
