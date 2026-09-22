@@ -3,55 +3,55 @@ import { ArrowRightIcon } from '../common/Icons';
 
 const CATEGORY_ITEMS = [
   {
-    name: 'Breakfast',
-    tagline: 'Hearty eggs, fluffy buttermilk pancakes & country breakfast burritos',
+    name: 'Pancakes & Combos',
+    tagline: 'Famous Frisbee-sized buttermilk pancakes & hungry neighbor combos',
     hours: 'Served Daily 6:00 AM – 2:00 PM (All Day Saturday & Sunday)',
+    image: '/images/restaurant-interior.jpg',
+    leadPlate: 'Breakfast Combo #2 (Eggs, Pancakes, Bacon, Sausage & Home Fries)',
+    description: 'Our plate-filling giant buttermilk pancakes, freshly whipped butter, farm eggs, hardwood bacon, and country sausage links.',
+    dishes: [
+      { name: 'Breakfast Combo #2', price: '$12.95', desc: '2 Eggs, 2 Pancakes, 2 Bacon, 2 Sausage, Homefries' },
+      { name: '3 Buttermilk Pancakes', price: '$6.95', desc: 'Giant plate-filling cakes, whipped butter & warm syrup' },
+      { name: 'Tres Leches Pancakes', price: '$8.95', desc: 'Sweet three-milk glaze, fresh strawberries & cream' }
+    ]
+  },
+  {
+    name: 'Morning Specialties',
+    tagline: 'Authentic Mexican specialties, breakfast burritos & skillet bowls',
+    hours: 'All-Day Breakfast Favorite',
     image: '/images/dish-breakfast-burrito.jpg',
-    leadPlate: 'Western Loudoun Breakfast Burrito Platter',
-    description: 'Fresh farm eggs, breakfast sausage, peppers, and melted cheddar wrapped hot and served with fresh seasonal berries and dual house salsas.',
+    leadPlate: 'Purcellville Breakfast Burrito Platter',
+    description: 'Flour tortilla rolled with farm eggs, sausage, peppers, onions, tomatoes, and cheese, served with fresh melon, berries, and dual house salsas.',
     dishes: [
-      { name: 'Western Loudoun Breakfast Burrito', price: '$11.95', desc: 'Sausage, eggs, peppers, fresh berries & salsas' },
-      { name: 'Buttermilk Pancake Stack', price: '$10.50', desc: 'Three fluffy cakes, whipped butter & hardwood bacon' },
-      { name: 'Country Eggs & Biscuits', price: '$9.95', desc: 'Two farm eggs, country sausage gravy & warm biscuits' }
+      { name: 'Breakfast Burrito Platter', price: '$10.95', desc: 'Sausage, peppers, onions, fresh fruit & dual salsas' },
+      { name: 'Huevos Rancheros', price: '$13.95', desc: 'Fried beans, 2 eggs, pico de gallo, avocado & tortillas' },
+      { name: 'Chilaquiles Verdes', price: '$13.95', desc: 'Crispy chips in salsa verde, crema, queso fresco & eggs' }
     ]
   },
   {
-    name: 'Homestyle Favorites',
-    tagline: 'Slow-simmered ribs, country steak & homestyle spaghetti',
-    hours: 'Served All Afternoon & Evening',
+    name: 'Daily Specials & Dinners',
+    tagline: 'Monday BBQ chicken, hamburger soup melts & Thursday country steak',
+    hours: 'Homestyle Lunch & Dinner Features',
     image: '/images/dish-ribs-fries.jpg',
-    leadPlate: 'Slow-Sauced Country Ribs & Fries',
-    description: 'Tender pork ribs basted in our savory house barbecue glaze, served with a generous mountain of crispy skin-on french fries and cool homemade slaw.',
+    leadPlate: 'Monday Special: BBQ Chicken with Slaw & Fries',
+    description: 'Slow-glazed tender barbecue chicken, mountain of skin-on french fries, and cool homemade coleslaw.',
     dishes: [
-      { name: 'Slow-Sauced Country Ribs', price: '$16.95', desc: 'Tender glaze-braised ribs, golden fries & slaw' },
-      { name: 'Spaghetti with Meat Sauce', price: '$14.95', desc: 'Twirl of noodles, hearty beef marinara & garlic toast' },
-      { name: 'Country Fried Steak', price: '$15.50', desc: 'Golden crispy beef steak smothered in white pepper gravy' }
+      { name: 'BBQ Chicken, Slaw & Fries', price: '$14.95', desc: 'Monday special with tender glaze & golden fries' },
+      { name: 'Grilled Cheese & Hamburger Soup', price: '$10.95', desc: 'Golden melt with scratch hamburger soup & chips' },
+      { name: 'Country Fried Steak Dinner', price: '$13.95', desc: 'Crispy steak, mashed potatoes, pepper gravy & veggies' }
     ]
   },
   {
-    name: 'Lunch & Sandwiches',
-    tagline: 'Thick sourdough melts, stacked clubs & warm kettle combos',
-    hours: 'Available from 10:30 AM Daily',
-    image: '/images/dish-soup-sandwich.jpg',
-    leadPlate: 'Toasted Ham Club & Creamy Soup',
-    description: 'Hot grilled sourdough layered with roasted ham and melted cheese, crinkle potato chips, and a piping hot bowl of rich broccoli cheddar soup.',
+    name: 'Farm Eggs & Omelets',
+    tagline: 'Griddled corned beef hash, 3-egg omelets & charbroiled steak',
+    hours: 'Served with Choice of 2 Sides',
+    image: '/images/hero-desktop.jpg',
+    leadPlate: 'Crispy Corned Beef Hash & 2 Eggs',
+    description: 'Griddled crispy corned beef hash and two eggs cooked to order, with choice of home fries, toast, or fresh fruit.',
     dishes: [
-      { name: 'Toasted Club & Kettle Soup', price: '$12.95', desc: 'Ham, cheese, crinkle chips & broccoli cheddar' },
-      { name: 'Purcellville Patty Melt', price: '$11.95', desc: 'Griddled Angus beef, caramelized onions & rye' },
-      { name: 'Classic Diner BLT', price: '$9.95', desc: 'Crispy bacon, ripe tomato, crisp lettuce & mayo' }
-    ]
-  },
-  {
-    name: 'Soups & Fresh Salads',
-    tagline: 'Daily kettle soups and crisp farm garden bowls',
-    hours: 'Fresh Kettle Daily',
-    image: '/images/dish-table-spaghetti.jpg',
-    leadPlate: 'Homestyle Kettle Soup & Crisp Salad',
-    description: 'Simmered fresh each morning using tender vegetables and savory broths, served alongside crunchy greens and crisp crackers.',
-    dishes: [
-      { name: 'Broccoli Cheddar Kettle Soup', price: '$6.50', desc: 'Rich velvet cheddar, tender broccoli florets' },
-      { name: 'Vegetable Beef Soup', price: '$6.50', desc: 'Simmered beef broth, sweet corn, peas & carrots' },
-      { name: 'Chef Garden Salad Bowl', price: '$9.95', desc: 'Mixed greens, cucumber, sweet onion & vinaigrette' }
+      { name: 'Corned Beef Hash & 2 Eggs', price: '$9.95', desc: 'Crispy hash with 2 eggs and choice of 2 sides' },
+      { name: 'Classic Western Omelet', price: '$10.95', desc: 'Ham, peppers, onions & cheese with 2 sides' },
+      { name: 'Steak & Two Eggs Platter', price: '$21.95', desc: 'Charbroiled juicy steak, 2 eggs, home fries & toast' }
     ]
   }
 ];
@@ -66,7 +66,7 @@ export default function CategoriesSection({ onOpenMenu }) {
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-restaurant-gold/20 text-restaurant-brown dark:text-restaurant-gold text-xs font-mono font-semibold tracking-wider uppercase mb-4">
-            <span>// 03 OUR EVERYDAY SPREAD</span>
+            <span>// 03 THE OFFICIAL MAIN STREET MENU</span>
           </div>
 
           <h2 className="font-serif font-bold text-4xl sm:text-5xl lg:text-6xl text-restaurant-brown dark:text-cream-50 tracking-tight leading-tight">
@@ -74,7 +74,7 @@ export default function CategoriesSection({ onOpenMenu }) {
             <span className="italic font-light text-restaurant-red">HUNGRY FOR?</span>
           </h2>
           <p className="mt-4 text-base sm:text-lg text-restaurant-ink/70 dark:text-cream-200/70 font-sans">
-            Select a category to explore our kitchen's most beloved everyday plates.
+            From our famous frisbee pancakes to daily Facebook specials, choose a category to explore.
           </p>
         </div>
 

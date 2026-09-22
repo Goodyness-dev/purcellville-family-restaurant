@@ -1,188 +1,320 @@
 export const SERVICES = [
-  // BREAKFAST STAPLES
+  // 1. HOMEMADE PANCAKES & COMBOS
   {
-    id: 'frisbee-buttermilk-pancakes',
-    title: 'Famous Frisbee-Sized Buttermilk Pancakes',
-    category: 'Breakfast',
-    subType: 'Diner Griddle Classic',
-    description: 'Our legendary giant plate-filling golden buttermilk pancakes served with whipped butter and warm maple syrup. Add hardwood bacon, sausage, or Virginia scrapple.',
-    price: '$9.95',
-    numericPrice: 9.95,
+    id: 'three-pancakes',
+    title: '3 Homemade Buttermilk Pancakes',
+    category: 'Pancakes & Combos',
+    subType: 'Plate-Filling Griddle Stack',
+    description: 'Three giant golden buttermilk pancakes served with whipped butter and warm syrup. Choice to add Bacon, Sausage, Scrapple (+$3.99) or Country Ham.',
+    price: '$6.95',
+    numericPrice: 6.95,
     image: '/images/restaurant-interior.jpg',
     popular: true,
-    tags: ['Customer Favorite', 'Giant Portion', 'All-Day']
+    tags: ['Frisbee-Sized', 'Diner Classic', 'Griddled Hot']
   },
   {
-    id: 'wild-blueberry-pancakes',
-    title: 'Wild Maine Blueberry Pancakes',
-    category: 'Breakfast',
-    subType: 'Fluffy Griddle Favorite',
-    description: 'Enormous fluffy buttermilk pancakes packed with sweet wild blueberries, dusted with powdered sugar and served with whipped butter.',
-    price: '$11.50',
-    numericPrice: 11.50,
+    id: 'blueberry-pancakes',
+    title: '3 Wild Blueberry Pancakes',
+    category: 'Pancakes & Combos',
+    subType: 'Fruit-Packed Cakes',
+    description: 'Three giant buttermilk pancakes filled with sweet blueberries and dusted with powdered sugar.',
+    price: '$7.45',
+    numericPrice: 7.45,
     image: '/images/restaurant-interior.jpg',
     popular: true,
-    tags: ['Town Favorite', 'Fresh Fruit', 'All-Day']
+    tags: ['Local Favorite', 'Wild Blueberries']
   },
   {
-    id: 'country-breakfast-burrito',
-    title: 'Western Loudoun Breakfast Burrito Platter',
-    category: 'Breakfast',
-    subType: 'Signature Morning Platter',
-    description: 'Warm flour tortilla rolled with fluffy farm eggs, savory sausage, diced bell peppers, onions, and melted cheddar, served with fresh cantaloupe, blackberries, raspberries, and mild and hot house salsas.',
-    price: '$11.95',
-    numericPrice: 11.95,
-    image: '/images/dish-breakfast-burrito.jpg',
-    popular: true,
-    tags: ['House Specialty', 'Fresh Fruit', 'Dual Salsas']
-  },
-  {
-    id: 'corned-beef-hash-eggs',
-    title: 'Crispy Corned Beef Hash & Farm Eggs',
-    category: 'Breakfast',
-    subType: 'Homestyle Breakfast',
-    description: 'Griddled crispy corned beef hash paired with two farm eggs cooked to order, golden home fries, and buttered toast with fruit preserves.',
-    price: '$12.25',
-    numericPrice: 12.25,
+    id: 'tres-leches-pancakes',
+    title: 'Signature Tres Leches Pancakes',
+    category: 'Pancakes & Combos',
+    subType: 'House Specialty Breakfast',
+    description: 'Fluffy golden pancakes soaked in rich sweet three-milk glaze, topped with whipped cream and fresh strawberries.',
+    price: '$8.95',
+    numericPrice: 8.95,
     image: '/images/hero-desktop.jpg',
     popular: true,
-    tags: ['Traditional', 'Crispy Hash', 'Hearty']
+    tags: ['Facebook Favorite', 'Sweet Treat']
   },
   {
-    id: 'western-omelet-toast',
-    title: 'Three-Egg Western Omelet',
-    category: 'Breakfast',
-    subType: 'Farm Egg Omelet',
-    description: 'Three farm eggs stuffed with diced sugar-cured ham, fresh green bell peppers, sweet onions, and sharp cheddar cheese, served with home fries and toast.',
-    price: '$11.75',
-    numericPrice: 11.75,
-    image: '/images/restaurant-interior.jpg',
-    popular: false,
-    tags: ['High Protein', 'Fresh Veggies', 'Toast Included']
+    id: 'breakfast-combo-2',
+    title: 'Breakfast Combo #2',
+    category: 'Pancakes & Combos',
+    subType: 'The Hungry Neighbor Feast',
+    description: '2 Farm Eggs, 2 Golden Pancakes, 2 Hardwood Bacon strips, 2 Country Sausage links, and crispy Home Fries.',
+    price: '$12.95',
+    numericPrice: 12.95,
+    image: '/images/hero-desktop.jpg',
+    popular: true,
+    tags: ['Top Seller', 'Everything on Plate']
   },
-
-  // HOMESTYLE DINNERS
   {
-    id: 'homestyle-ribs-fries',
-    title: 'Slow-Sauced Country Ribs & Fries',
-    category: 'Homestyle Favorites',
-    subType: 'Generous Dinner Platter',
-    description: 'Tender slow-simmered pork ribs smothered in rich savory barbecue glaze, served with a mountain of skin-on golden french fries and creamy homemade coleslaw on a classic diner plate.',
-    price: '$16.95',
-    numericPrice: 16.95,
+    id: 'breakfast-combo-3',
+    title: 'Breakfast Combo #3 (Biscuits & Gravy)',
+    category: 'Pancakes & Combos',
+    subType: 'Southern Feast',
+    description: '2 Farm Eggs, 2 Bacon strips, 2 Sausage links, crispy Home Fries, and 2 warm buttermilk Biscuits smothered in country sausage gravy.',
+    price: '$14.95',
+    numericPrice: 14.95,
     image: '/images/dish-ribs-fries.jpg',
     popular: true,
-    tags: ['Customer Favorite', 'Fall-Off-The-Bone', 'Classic Plate']
+    tags: ['Biscuits & Gravy', 'Southern Comfort']
   },
   {
-    id: 'spaghetti-meat-sauce',
-    title: 'Homestyle Spaghetti with Meat Sauce',
-    category: 'Homestyle Favorites',
-    subType: 'Pasta & Garlic Toast',
-    description: 'A generous twirl of spaghetti noodles heaped with our slow-simmered seasoned ground beef marinara, garnished with fresh herbs and served with thick golden buttered garlic toast on our signature turquoise ceramic plate.',
+    id: 'french-toast-meat',
+    title: 'Banana or Strawberry French Toast w/ Meat',
+    category: 'Pancakes & Combos',
+    subType: 'Griddle Specialty',
+    description: 'Thick-cut golden French toast topped with fresh banana slices or strawberries, served with choice of bacon or sausage.',
+    price: '$13.95',
+    numericPrice: 13.95,
+    image: '/images/restaurant-interior.jpg',
+    popular: false,
+    tags: ['Fresh Fruit', 'Bacon or Sausage']
+  },
+  {
+    id: 'sausage-chipped-beef-gravy',
+    title: 'Sausage or Chipped Beef Gravy',
+    category: 'Pancakes & Combos',
+    subType: 'Virginia Diner Tradition',
+    description: 'Served piping hot over your choice of toasted bread, 2 warm biscuits, or 2 golden pancakes.',
+    price: '$9.95',
+    numericPrice: 9.95,
+    image: '/images/dish-soup-sandwich.jpg',
+    popular: false,
+    tags: ['Traditional Chipped Beef', 'Scratch Gravy']
+  },
+
+  // 2. SIGNATURE BREAKFAST & MEXICAN SPECIALTIES
+  {
+    id: 'breakfast-burrito',
+    title: 'Purcellville Breakfast Burrito Platter',
+    category: 'Morning Specialties',
+    subType: 'Facebook Featured Platter',
+    description: 'Flour tortilla packed with scrambled eggs, seasoned sausage, green bell peppers, sweet onions, tomatoes, and melted cheese. Served with fresh seasonal fruit and mild & hot salsas.',
+    price: '$10.95',
+    numericPrice: 10.95,
+    image: '/images/dish-breakfast-burrito.jpg',
+    popular: true,
+    tags: ['Real Diner Photo', 'Fresh Fruit Cup', 'Dual Salsas']
+  },
+  {
+    id: 'huevos-rancheros',
+    title: 'Huevos Rancheros Platter',
+    category: 'Morning Specialties',
+    subType: 'Authentic Morning Specialty',
+    description: 'Crispy corn tortillas topped with fried beans, 2 sunny farm eggs, homemade pico de gallo, fresh sliced avocado, and house salsa on the side.',
+    price: '$13.95',
+    numericPrice: 13.95,
+    image: '/images/dish-table-spaghetti.jpg',
+    popular: true,
+    tags: ['Fresh Avocado', 'House Pico', 'Tortillas']
+  },
+  {
+    id: 'chilaquiles-verdes',
+    title: 'Chilaquiles Verdes con Huevos',
+    category: 'Morning Specialties',
+    subType: 'Scratch-Made Favorite',
+    description: 'Crisp tortilla chips simmered in tangy salsa verde, topped with Mexican crema, queso fresco, sliced avocado, and two sunny eggs.',
+    price: '$13.95',
+    numericPrice: 13.95,
+    image: '/images/dish-table-spaghetti.jpg',
+    popular: true,
+    tags: ['Salsa Verde', 'Queso Fresco']
+  },
+  {
+    id: 'chorizo-breakfast-bowl',
+    title: 'Chorizo Breakfast Bowl with Home Fries',
+    category: 'Morning Specialties',
+    subType: 'Hearty Breakfast Skillet',
+    description: 'Crispy seasoned home fries loaded with spicy Mexican chorizo, sauteed peppers, onions, melted jack cheese, and two eggs on top.',
+    price: '$13.95',
+    numericPrice: 13.95,
+    image: '/images/dish-breakfast-burrito.jpg',
+    popular: false,
+    tags: ['Spicy Chorizo', 'Crispy Homefries']
+  },
+  {
+    id: 'avocado-blt',
+    title: 'Fresh Avocado BLT on Toast',
+    category: 'Morning Specialties',
+    subType: 'All-Day Breakfast',
+    description: 'Hardwood smoked bacon, fresh sliced avocado, ripe tomatoes, crisp lettuce, and mayo on your choice of toasted bread with home fries.',
+    price: '$12.95',
+    numericPrice: 12.95,
+    image: '/images/dish-soup-sandwich.jpg',
+    popular: false,
+    tags: ['Fresh Avocado', 'Thick Bacon']
+  },
+
+  // 3. FARM EGGS & 2-EGG OMELETS (Served with 2 sides)
+  {
+    id: 'corned-beef-hash-eggs',
+    title: 'Corned Beef Hash & 2 Farm Eggs',
+    category: 'Farm Eggs & Omelets',
+    subType: 'Served w/ 2 Sides',
+    description: 'Griddled crispy corned beef hash and two farm eggs cooked any style. Served with your choice of 2 sides: Home Fries, Toast, or Fresh Fruit.',
+    price: '$9.95',
+    numericPrice: 9.95,
+    image: '/images/hero-desktop.jpg',
+    popular: true,
+    tags: ['Crispy Hash', '2 Sides Included']
+  },
+  {
+    id: 'steak-and-eggs',
+    title: 'Sirloin Steak & Two Eggs Platter',
+    category: 'Farm Eggs & Omelets',
+    subType: 'Butcher Cut Breakfast',
+    description: 'Charbroiled juicy steak cooked to your liking, paired with 2 farm eggs, crispy home fries, and buttered toast.',
+    price: '$21.95',
+    numericPrice: 21.95,
+    image: '/images/hero-desktop.jpg',
+    popular: false,
+    tags: ['Charbroiled Steak', 'Hearty Protein']
+  },
+  {
+    id: 'western-omelet',
+    title: 'Classic Western Omelet',
+    category: 'Farm Eggs & Omelets',
+    subType: 'Served w/ 2 Sides',
+    description: 'Diced ham, fresh green bell peppers, sweet onions, and melted American cheese folded in fluffy eggs. Served with 2 sides.',
+    price: '$10.95',
+    numericPrice: 10.95,
+    image: '/images/restaurant-interior.jpg',
+    popular: true,
+    tags: ['Virginia Ham', '2 Sides Included']
+  },
+  {
+    id: 'greek-omelet',
+    title: 'Greek Omelet with Feta & Tomato',
+    category: 'Farm Eggs & Omelets',
+    subType: 'Served w/ 2 Sides',
+    description: 'Crumbled tangy feta cheese, ripe diced tomatoes, and sweet onions. Served with choice of home fries, toast, or fruit.',
+    price: '$8.95',
+    numericPrice: 8.95,
+    image: '/images/restaurant-interior.jpg',
+    popular: false,
+    tags: ['Tangy Feta', 'Fresh Veggies']
+  },
+  {
+    id: 'all-meat-omelet',
+    title: 'All-Meat & Cheese Omelet',
+    category: 'Farm Eggs & Omelets',
+    subType: 'Carnivore Special',
+    description: 'Loaded with bacon, country sausage, ham, Virginia scrapple, and melted cheese. Served with 2 sides.',
+    price: '$12.95',
+    numericPrice: 12.95,
+    image: '/images/dish-ribs-fries.jpg',
+    popular: false,
+    tags: ['Bacon + Sausage + Scrapple + Ham']
+  },
+
+  // 4. DAILY SPECIALS & HOMESTYLE DINNERS
+  {
+    id: 'bbq-chicken-fries-slaw',
+    title: 'Monday Special: BBQ Chicken with Coleslaw & Fries',
+    category: 'Daily Specials & Dinners',
+    subType: 'Official Daily Special',
+    description: 'Tender slow-glazed barbecue chicken served with a mountain of skin-on golden french fries and creamy homemade coleslaw.',
+    price: '$14.95',
+    numericPrice: 14.95,
+    image: '/images/dish-ribs-fries.jpg',
+    popular: true,
+    tags: ['Official Facebook Special', 'Skin-On Fries']
+  },
+  {
+    id: 'grilled-cheese-hamburger-soup',
+    title: 'Grilled Cheese with Cup of Hamburger Soup & Chips',
+    category: 'Daily Specials & Dinners',
+    subType: 'Official Daily Special',
+    description: 'Golden buttery grilled cheese sandwich served with a steaming cup of homestyle hamburger vegetable soup and crunchy potato chips.',
+    price: '$10.95',
+    numericPrice: 10.95,
+    image: '/images/dish-soup-sandwich.jpg',
+    popular: true,
+    tags: ['Official Facebook Special', 'Kettle Hamburger Soup']
+  },
+  {
+    id: 'country-fried-steak-dinner',
+    title: 'Country Fried Steak with Mashed Potatoes & Veggies',
+    category: 'Daily Specials & Dinners',
+    subType: 'Thursday Feature',
+    description: 'Golden crispy fried beef cutlet smothered in homestyle country pepper gravy, served with real mashed potatoes and buttered mixed vegetables.',
+    price: '$13.95',
+    numericPrice: 13.95,
+    image: '/images/hero-desktop.jpg',
+    popular: true,
+    tags: ['Thursday Special', 'Mashed Potatoes & Gravy']
+  },
+  {
+    id: 'homestyle-spaghetti-meat-sauce',
+    title: 'Homestyle Spaghetti with Meat Sauce & Garlic Toast',
+    category: 'Daily Specials & Dinners',
+    subType: 'Turquoise Plate Favorite',
+    description: 'Twirl of noodles heaped with slow-simmered savory beef marinara and fresh herbs, served on our signature turquoise ceramic plate with garlic toast.',
     price: '$14.95',
     numericPrice: 14.95,
     image: '/images/dish-table-spaghetti.jpg',
     popular: true,
-    tags: ['House Specialty', 'Turquoise Plate', 'Garlic Toast Included']
-  },
-  {
-    id: 'country-fried-steak',
-    title: 'Country Fried Steak & Pepper Gravy',
-    category: 'Homestyle Favorites',
-    subType: 'Southern Diner Classic',
-    description: 'Tender beef cutlet breaded and fried to golden perfection, smothered in rich country white pepper gravy, served with skin-on fries and buttered vegetables.',
-    price: '$15.50',
-    numericPrice: 15.50,
-    image: '/images/hero-desktop.jpg',
-    popular: false,
-    tags: ['Southern Classic', 'Scratch Gravy', 'Generous']
+    tags: ['Turquoise Plate', 'Garlic Toast Included']
   },
 
-  // LUNCH & SANDWICHES
+  // 5. HOMESTYLE SIDES, DESSERT & DRINKS
   {
-    id: 'soup-toasted-sandwich',
-    title: 'Toasted Sourdough Club & Broccoli Cheddar Soup',
-    category: 'Lunch & Sandwiches',
-    subType: 'Sandwich & Soup Combo',
-    description: 'Golden griddled sourdough bread layered with tender roasted ham, melted cheese, and crisp pickles, paired with crunchy crinkle potato chips and a steaming ceramic bowl of rich broccoli cheddar soup.',
-    price: '$12.95',
-    numericPrice: 12.95,
-    image: '/images/dish-soup-sandwich.jpg',
-    popular: true,
-    tags: ['Lunch Favorite', 'Hot Kettle Soup', 'Crinkle Chips']
-  },
-  {
-    id: 'purcellville-patty-melt',
-    title: 'Purcellville Patty Melt on Grilled Rye',
-    category: 'Lunch & Sandwiches',
-    subType: 'Diner Griddle Melt',
-    description: 'Fresh grilled Angus beef patty topped with sweet caramelized onions and double Swiss cheese on griddled marble rye bread, served with fries.',
-    price: '$11.95',
-    numericPrice: 11.95,
-    image: '/images/dish-ribs-fries.jpg',
-    popular: true,
-    tags: ['Griddle Melt', 'Caramelized Onions', 'Angus Beef']
-  },
-  {
-    id: 'classic-diner-cheeseburger',
-    title: 'Old-Fashioned Diner Cheeseburger & Fries',
-    category: 'Lunch & Sandwiches',
-    subType: 'Fresh Angus Burger',
-    description: 'Seared on our seasoned flat top with melted American cheese, crisp lettuce, sliced tomato, sweet pickle chips, and mayonnaise on a toasted brioche bun.',
-    price: '$10.95',
-    numericPrice: 10.95,
-    image: '/images/dish-ribs-fries.jpg',
-    popular: false,
-    tags: ['Flat-Top Seared', 'Fresh Angus', 'Golden Fries']
-  },
-
-  // SOUPS & SALADS
-  {
-    id: 'broccoli-cheddar-bowl',
-    title: 'Velvet Broccoli Cheddar Soup Bowl',
-    category: 'Soups & Fresh Salads',
-    subType: 'Scratch-Made Kettle',
-    description: 'Simmered daily in small batches with aged cheddar cheese, fresh cream, and tender broccoli florets, served with crisp crackers.',
-    price: '$6.50',
-    numericPrice: 6.50,
-    image: '/images/dish-soup-sandwich.jpg',
-    popular: false,
-    tags: ['Kettle Fresh', 'Velvet Cheddar', 'Comfort']
-  },
-  {
-    id: 'homestyle-veg-beef-soup',
-    title: 'Homestyle Vegetable Beef Soup & Salad',
-    category: 'Soups & Fresh Salads',
-    subType: 'Hearty Broth Bowl',
-    description: 'Tender simmered beef with sweet corn, garden peas, carrots, and potatoes in rich savory tomato beef broth, served with a garden side salad.',
-    price: '$10.95',
-    numericPrice: 10.95,
-    image: '/images/dish-table-spaghetti.jpg',
-    popular: false,
-    tags: ['Slow-Simmered', 'Garden Salad', 'Hearty Broth']
-  },
-
-  // BEVERAGES
-  {
-    id: 'fresh-diner-coffee',
-    title: 'Bottomless Fresh Diner Coffee',
-    category: 'Beverages & Sides',
-    subType: 'Hot Brew in Ceramic Mug',
-    description: 'Freshly ground and continually brewed hot diner coffee, poured fresh to your table in our heavy white ceramic mugs. Refills always free.',
-    price: '$2.95',
-    numericPrice: 2.95,
+    id: 'pb-chocolate-pie-coffee',
+    title: 'Peanut Butter Chocolate Cream Pie with Coffee',
+    category: 'Desserts & Beverages',
+    subType: 'Daily Dessert Special',
+    description: 'A rich slice of homemade peanut butter chocolate cream pie paired with a steaming hot cup of fresh diner coffee.',
+    price: '$5.00',
+    numericPrice: 5.00,
     image: '/images/hero-desktop.jpg',
     popular: true,
-    tags: ['Bottomless Refills', 'Hot Brew', 'Diner Tradition']
+    tags: ['Pie + Coffee Deal', 'Scratch Made']
+  },
+  {
+    id: 'bottomless-coffee',
+    title: 'Bottomless Hot Diner Coffee',
+    category: 'Desserts & Beverages',
+    subType: 'Poured in Heavy Ceramic Mug',
+    description: 'Freshly ground and continually brewed hot coffee served in our heavy white ceramic mugs with unlimited free refills.',
+    price: '$2.50',
+    numericPrice: 2.50,
+    image: '/images/hero-desktop.jpg',
+    popular: true,
+    tags: ['Unlimited Refills', '$2.50']
+  },
+  {
+    id: 'thick-milkshake',
+    title: 'Old-Fashioned Hand-Spun Milkshake',
+    category: 'Desserts & Beverages',
+    subType: 'Diner Milkshake',
+    description: 'Hand-dipped ice cream blended thick with whipped cream and a cherry on top. Chocolate, Vanilla, or Strawberry.',
+    price: '$5.95',
+    numericPrice: 5.95,
+    image: '/images/restaurant-interior.jpg',
+    popular: false,
+    tags: ['Hand-Spun', 'Diner Classic']
+  },
+  {
+    id: 'side-corned-beef-hash',
+    title: 'Side of Crispy Corned Beef Hash',
+    category: 'Desserts & Beverages',
+    subType: 'A La Carte Side',
+    description: 'Generous side of seasoned corned beef hash seared crisp on the flat top grill.',
+    price: '$4.99',
+    numericPrice: 4.99,
+    image: '/images/hero-desktop.jpg',
+    popular: false,
+    tags: ['A La Carte']
   }
 ];
 
 export const CATEGORIES = [
   'All Plates',
-  'Breakfast',
-  'Homestyle Favorites',
-  'Lunch & Sandwiches',
-  'Soups & Fresh Salads',
-  'Beverages & Sides'
+  'Pancakes & Combos',
+  'Morning Specialties',
+  'Farm Eggs & Omelets',
+  'Daily Specials & Dinners',
+  'Desserts & Beverages'
 ];
