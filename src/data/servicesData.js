@@ -1,11 +1,11 @@
 export const SERVICES = [
-  // 1. HOMEMADE PANCAKES & COMBOS
+  // 1. PANCAKES & COMBOS (Unique Real Images)
   {
     id: 'breakfast-burrito',
     title: 'Purcellville Breakfast Burrito Platter',
     category: 'Pancakes & Combos',
     subType: 'Signature Morning Platter',
-    description: 'Warm flour tortilla packed with scrambled eggs, seasoned sausage, green bell peppers, sweet onions, tomatoes, and melted cheese. Flanked with fresh seasonal berries and dual house mild & hot salsas.',
+    description: 'Flour tortilla packed with scrambled eggs, seasoned sausage, green bell peppers, sweet onions, tomatoes, and melted cheese. Flanked with fresh seasonal fruit and dual house salsas.',
     price: '$10.95',
     numericPrice: 10.95,
     image: '/images/dish-breakfast-burrito.jpg',
@@ -17,10 +17,10 @@ export const SERVICES = [
     title: '3 Homemade Buttermilk Pancakes',
     category: 'Pancakes & Combos',
     subType: 'Plate-Filling Griddle Stack',
-    description: 'Three giant golden buttermilk pancakes served with whipped butter and warm syrup. Add hardwood bacon, country sausage, scrapple (+$3.99), or country ham.',
+    description: 'Three giant golden buttermilk pancakes served with whipped butter and warm syrup. Add hardwood bacon, sausage, or scrapple (+$3.99).',
     price: '$6.95',
     numericPrice: 6.95,
-    image: '/images/hero-desktop.jpg',
+    image: '/images/dish-facebook-1.jpg',
     popular: true,
     tags: ['Frisbee-Sized', 'Diner Classic', 'Griddled Hot']
   },
@@ -29,10 +29,10 @@ export const SERVICES = [
     title: 'Signature Tres Leches Pancakes',
     category: 'Pancakes & Combos',
     subType: 'House Specialty Breakfast',
-    description: 'Fluffy golden pancakes soaked in rich sweet three-milk glaze, topped with whipped cream and fresh fruit.',
+    description: 'Fluffy golden pancakes soaked in rich sweet three-milk glaze, topped with whipped cream and fresh seasonal fruit.',
     price: '$8.95',
     numericPrice: 8.95,
-    image: '/images/hero-desktop.jpg',
+    image: '/images/dish-facebook-8.jpg',
     popular: true,
     tags: ['Facebook Favorite', 'Sweet Treat']
   },
@@ -44,12 +44,12 @@ export const SERVICES = [
     description: '2 Farm Eggs, 2 Golden Pancakes, 2 Hardwood Bacon strips, 2 Country Sausage links, and crispy Home Fries.',
     price: '$12.95',
     numericPrice: 12.95,
-    image: '/images/hero-desktop.jpg',
+    image: '/images/dish-facebook-2.jpg',
     popular: true,
     tags: ['Top Seller', 'Everything on Plate']
   },
 
-  // 2. DAILY SPECIALS & HOMESTYLE DINNERS
+  // 2. DAILY SPECIALS & HOMESTYLE DINNERS (Unique Real Images)
   {
     id: 'bbq-chicken-fries-slaw',
     title: 'Monday Special: BBQ Chicken with Coleslaw & Fries',
@@ -91,15 +91,77 @@ export const SERVICES = [
     title: 'Diner Tacos Platter with Mountain of Golden Fries',
     category: 'Daily Specials & Dinners',
     subType: 'House Taco Platter',
-    description: 'Warm soft tortillas stuffed with seasoned grilled chicken or fish, crisp cabbage slaw, red onions, and house tartar sauce, flanked by a huge portion of golden skin-on fries and fresh lemon.',
+    description: 'Warm soft tortillas stuffed with seasoned grilled chicken or fish, crisp cabbage slaw, red onions, and house tartar sauce, flanked by a huge portion of golden skin-on fries.',
     price: '$13.95',
     numericPrice: 13.95,
     image: '/images/dish-tacos-fries.jpg',
     popular: true,
     tags: ['Real Kitchen Photo', 'Crispy Skin-On Fries', 'House Slaw']
   },
+  {
+    id: 'country-fried-steak-dinner',
+    title: 'Country Fried Steak with Mashed Potatoes & Veggies',
+    category: 'Daily Specials & Dinners',
+    subType: 'Thursday Feature',
+    description: 'Golden crispy fried beef cutlet smothered in homestyle country pepper gravy, served with real mashed potatoes and buttered mixed vegetables.',
+    price: '$13.95',
+    numericPrice: 13.95,
+    image: '/images/dish-facebook-9.jpg',
+    popular: false,
+    tags: ['Thursday Special', 'Mashed Potatoes & Gravy']
+  },
 
-  // 3. HOMESTYLE SOUPS & FRESH BOWLS
+  // 3. MORNING SPECIALTIES (Unique Real Images)
+  {
+    id: 'huevos-rancheros',
+    title: 'Huevos Rancheros Platter',
+    category: 'Morning Specialties',
+    subType: 'Authentic Morning Specialty',
+    description: 'Crispy corn tortillas topped with fried beans, 2 sunny farm eggs, homemade pico de gallo, fresh sliced avocado, and house salsa on the side.',
+    price: '$13.95',
+    numericPrice: 13.95,
+    image: '/images/dish-facebook-7.jpg',
+    popular: true,
+    tags: ['Fresh Avocado', 'House Pico', 'Tortillas']
+  },
+  {
+    id: 'chilaquiles-verdes',
+    title: 'Chilaquiles Verdes con Huevos',
+    category: 'Morning Specialties',
+    subType: 'Scratch-Made Favorite',
+    description: 'Crisp tortilla chips simmered in tangy salsa verde, topped with Mexican crema, queso fresco, sliced avocado, and two sunny eggs.',
+    price: '$13.95',
+    numericPrice: 13.95,
+    image: '/images/dish-facebook-6.jpg',
+    popular: true,
+    tags: ['Salsa Verde', 'Queso Fresco']
+  },
+  {
+    id: 'corned-beef-hash-eggs',
+    title: 'Crispy Corned Beef Hash & 2 Eggs',
+    category: 'Morning Specialties',
+    subType: 'Served w/ 2 Sides',
+    description: 'Griddled crispy corned beef hash and two eggs cooked to order, with choice of home fries, toast, or fresh fruit.',
+    price: '$9.95',
+    numericPrice: 9.95,
+    image: '/images/dish-facebook-3.jpg',
+    popular: true,
+    tags: ['Crispy Hash', '2 Sides Included']
+  },
+  {
+    id: 'classic-western-omelet',
+    title: 'Three-Egg Western Omelet',
+    category: 'Morning Specialties',
+    subType: 'Served w/ 2 Sides',
+    description: 'Diced ham, fresh green bell peppers, sweet onions, and melted American cheese folded in fluffy eggs. Served with 2 sides.',
+    price: '$10.95',
+    numericPrice: 10.95,
+    image: '/images/dish-facebook-4.jpg',
+    popular: false,
+    tags: ['Virginia Ham', '2 Sides Included']
+  },
+
+  // 4. HOMESTYLE SOUPS & FRESH BOWLS (Unique Real Images)
   {
     id: 'homestyle-meatball-soup',
     title: 'Scratch-Made Albondigas Meatball Kettle Soup',
@@ -113,19 +175,31 @@ export const SERVICES = [
     tags: ['Real Kitchen Photo', 'Jumbo Handmade Meatball', 'Scratch Broth']
   },
   {
-    id: 'broccoli-cheddar-bowl',
-    title: 'Velvet Broccoli Cheddar Soup Bowl',
+    id: 'purcellville-patty-melt',
+    title: 'Purcellville Patty Melt on Grilled Rye',
     category: 'Soups & Fresh Salads',
-    subType: 'Scratch-Made Kettle',
-    description: 'Simmered daily in small batches with aged cheddar cheese, fresh cream, and tender broccoli florets, served with crisp crackers.',
-    price: '$6.50',
-    numericPrice: 6.50,
-    image: '/images/dish-soup-sandwich.jpg',
+    subType: 'Diner Griddle Melt',
+    description: 'Fresh grilled Angus beef patty topped with sweet caramelized onions and double Swiss cheese on griddled marble rye bread, served with fries.',
+    price: '$11.95',
+    numericPrice: 11.95,
+    image: '/images/dish-facebook-10.jpg',
     popular: false,
-    tags: ['Kettle Fresh', 'Velvet Cheddar', 'Comfort']
+    tags: ['Griddle Melt', 'Caramelized Onions']
+  },
+  {
+    id: 'old-fashioned-cheeseburger',
+    title: 'Old-Fashioned Diner Cheeseburger & Fries',
+    category: 'Soups & Fresh Salads',
+    subType: 'Fresh Angus Burger',
+    description: 'Seared on our seasoned flat top with melted American cheese, crisp lettuce, sliced tomato, pickles, and mayo on a toasted bun with fries.',
+    price: '$10.95',
+    numericPrice: 10.95,
+    image: '/images/dish-facebook-11.jpg',
+    popular: false,
+    tags: ['Flat-Top Seared', 'Fresh Angus']
   },
 
-  // 4. HAND-SPUN SHAKES & DRINKS
+  // 5. HAND-SPUN SHAKES & SIDES (Unique Real Images)
   {
     id: 'hand-spun-strawberry-shake',
     title: 'Hand-Spun Strawberry Milkshake & Whipped Mug',
@@ -139,28 +213,28 @@ export const SERVICES = [
     tags: ['Real Photo', 'Hand-Spun', 'Whipped Cream']
   },
   {
-    id: 'bottomless-coffee',
-    title: 'Bottomless Hot Diner Coffee',
+    id: 'fresh-fruit-cup-side',
+    title: 'Fresh Seasonal Fruit Cup',
     category: 'Desserts & Beverages',
-    subType: 'Poured in Heavy Ceramic Mug',
-    description: 'Freshly ground and continually brewed hot coffee served in our heavy ceramic mugs with unlimited free refills.',
-    price: '$2.50',
-    numericPrice: 2.50,
-    image: '/images/dish-shakes-drinks.jpg',
-    popular: true,
-    tags: ['Unlimited Refills', '$2.50']
+    subType: 'Healthy Diner Side',
+    description: 'Ripe sweet honeydew, cantaloupe, blackberries, and fresh raspberries prepared fresh daily.',
+    price: '$2.95',
+    numericPrice: 2.95,
+    image: '/images/dish-facebook-12.jpg',
+    popular: false,
+    tags: ['Fresh Daily', 'Seasonal Berries']
   },
   {
-    id: 'pb-chocolate-pie-coffee',
-    title: 'Peanut Butter Chocolate Cream Pie with Coffee',
+    id: 'hot-griddle-sandwich-side',
+    title: 'Grilled Ham & Swiss Toast Side',
     category: 'Desserts & Beverages',
-    subType: 'Daily Dessert Special',
-    description: 'A rich slice of homemade peanut butter chocolate cream pie paired with a steaming hot cup of fresh diner coffee.',
-    price: '$5.00',
-    numericPrice: 5.00,
-    image: '/images/dish-shakes-drinks.jpg',
+    subType: 'Diner Griddle Bread',
+    description: 'Golden buttery griddled toast with country ham and melted Swiss cheese.',
+    price: '$4.95',
+    numericPrice: 4.95,
+    image: '/images/dish-facebook-5.jpg',
     popular: false,
-    tags: ['Pie + Coffee Deal', 'Scratch Made']
+    tags: ['Hot Off Grill']
   }
 ];
 
@@ -168,6 +242,7 @@ export const CATEGORIES = [
   'All Plates',
   'Pancakes & Combos',
   'Daily Specials & Dinners',
+  'Morning Specialties',
   'Soups & Fresh Salads',
   'Desserts & Beverages'
 ];

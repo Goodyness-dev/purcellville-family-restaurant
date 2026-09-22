@@ -6,41 +6,45 @@ export default function Hero({ onOpenMenu, onOpenOrder }) {
   const videoRef = useRef(null);
   const openStatus = isOpenNow();
 
+  useEffect(() => {
+    if (videoRef.current) {
+      videoRef.current.play().catch(() => {
+        // Autoplay policy fallback
+      });
+    }
+  }, []);
+
   return (
     <section id="hero" className="relative min-h-screen flex items-center justify-start overflow-hidden bg-restaurant-ink">
       
-      {/* Visual Backdrop (Responsive Desktop 16:9 / Mobile 9:16 + Steam Simulation) */}
+      {/* Background Cinematic Video & Poster Layer */}
       <div className="absolute inset-0 z-0">
         
-        {/* Desktop Image / Video Layer */}
-        <div className="hidden md:block absolute inset-0 w-full h-full overflow-hidden">
-          <picture>
-            <source media="(min-width: 768px)" srcSet="/images/hero-desktop.jpg" />
-            <img 
-              src="/images/hero-desktop.jpg" 
-              alt="Purcellville Family Restaurant booth table with coffee, breakfast, and comfort plates" 
-              className="w-full h-full object-cover object-center animate-ken-burns scale-105 filter brightness-[0.92]"
-              fetchpriority="high"
-            />
-          </picture>
-        </div>
-
-        {/* Mobile Image / Video Layer */}
-        <div className="block md:hidden absolute inset-0 w-full h-full overflow-hidden">
+        {/* Native Responsive Video Player */}
+        <video
+          ref={videoRef}
+          autoPlay
+          loop
+          muted
+          playsInline
+          poster="/images/hero-desktop.jpg"
+          className="w-full h-full object-cover object-center scale-105 filter brightness-[0.88]"
+        >
+          <source src="/hero-video.mp4" type="video/mp4" />
+          <source src="/images/hero-video.mp4" type="video/mp4" />
           <img 
-            src="/images/hero-mobile.jpg" 
-            alt="Purcellville Family Restaurant booth table in morning window sunlight" 
-            className="w-full h-full object-cover object-bottom animate-ken-burns scale-105 filter brightness-[0.88]"
-            fetchpriority="high"
+            src="/images/hero-desktop.jpg" 
+            alt="Purcellville Family Restaurant booth table with coffee, breakfast, and comfort plates" 
+            className="w-full h-full object-cover object-center"
           />
-        </div>
+        </video>
 
         {/* Ambient Film Grain & Atmospheric Sunlight Gradients */}
-        <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/45 to-transparent z-10 pointer-events-none" />
+        <div className="absolute inset-0 bg-gradient-to-r from-black/85 via-black/50 to-transparent z-10 pointer-events-none" />
         <div className="absolute inset-0 bg-gradient-to-t from-restaurant-ink via-transparent to-black/50 z-10 pointer-events-none" />
         <div className="absolute inset-0 bg-radial-gradient from-amber-500/10 via-transparent to-transparent pointer-events-none z-10" />
 
-        {/* Atmospheric Rising Steam Particles (Visual Simulation over Coffee Mug & Plates) */}
+        {/* Atmospheric Rising Steam Particles */}
         <div className="hidden md:block absolute right-[22%] bottom-[28%] z-15 pointer-events-none">
           <div className="relative w-16 h-28">
             <div className="absolute bottom-0 left-3 w-4 h-16 rounded-full bg-white/30 blur-md animate-steam-1" />
